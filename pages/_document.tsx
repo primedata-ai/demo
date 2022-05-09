@@ -1,5 +1,6 @@
 import Document, {Html, Head, Main, NextScript, DocumentContext} from 'next/document'
 import React from "react";
+import Script from 'next/Script'
 
 class MyDocument extends Document {
   static async getInitialProps(ctx: DocumentContext) {
@@ -46,31 +47,6 @@ class MyDocument extends Document {
           <Main/>
           <NextScript/>
 
-          <script async src="/vendor/jquery/jquery-3.2.1.min.js"></script>
-          <script async src="/vendor/animsition/js/animsition.min.js"></script>
-          <script async src="/vendor/bootstrap/js/popper.js"></script>
-          <script async src="/vendor/bootstrap/js/bootstrap.min.js"></script>
-          <script async src="/vendor/select2/select2.min.js"></script>
-
-          {/*<script*/}
-          {/*  dangerouslySetInnerHTML={{*/}
-          {/*    __html: `*/}
-          {/*  $(".js-select2").each(function(){*/}
-          {/*  $(this).select2({*/}
-          {/*    minimumResultsForSearch: 20,*/}
-          {/*    dropdownParent: $(this).next('.dropDownSelect2')*/}
-          {/*  });*/}
-          {/*})`}}*/}
-          {/*/>*/}
-
-          <script async src="/vendor/daterangepicker/moment.min.js"></script>
-          <script async src="/vendor/daterangepicker/daterangepicker.js"></script>
-          <script async src="/vendor/slick/slick.min.js"></script>
-          <script async src="/js/slick-custom.js"></script>
-          <script async src="/vendor/parallax100/parallax100.js"></script>
-          {/*<script dangerouslySetInnerHTML={{__html: `$('.parallax100').parallax100();`}}/>*/}
-
-          <script async src="/vendor/MagnificPopup/jquery.magnific-popup.min.js"></script>
         </body>
       </Html>
     )
