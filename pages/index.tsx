@@ -1,17 +1,17 @@
 import React from "react";
 import type {NextPage} from 'next'
-import Header from "../components/containers/Header";
-import Footer from "../components/containers/Footer";
 import ProductDetailPopup from "../components/containers/ProductDetailPopup";
 import CollectionSlidesOverview from "../components/containers/CollectionSlidesOverview";
 import Script from 'next/script'
 import ProductBanner from "../components/containers/ProductBanner";
 import ProductListSection from "../components/containers/ProductListSection";
+import useTranslation from 'locales/useTranslation';
 
 const Home: NextPage = () => {
+  const { t } = useTranslation();
   return (
     <React.Fragment>
-      <Header/>
+      {/* <Header/> */}
 
       <div className="wrap-header-cart js-panel-cart">
         <div className="s-full js-hide-cart"/>
@@ -91,7 +91,7 @@ const Home: NextPage = () => {
 
       <ProductListSection/>
 
-      <Footer/>
+      {/* <Footer/> */}
 
       <div className="btn-back-to-top" id="myBtn">
         <span className="symbol-btn-back-to-top">

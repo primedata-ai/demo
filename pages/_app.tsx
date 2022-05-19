@@ -1,11 +1,17 @@
-import '../styles/globals.css'
-import type {AppProps} from 'next/app'
+import "../styles/globals.css";
+import type { AppProps } from "next/app";
 import React from "react";
+import Header from "components/containers/Header";
+import Footer from "components/containers/Footer";
 
-function MyApp({Component, pageProps}: AppProps) {
+function MyApp({ Component, pageProps }: AppProps) {
   return (
-    <Component {...pageProps} />
-  )
+    <React.Fragment>
+      <Header />
+      <Component {...pageProps} />
+      <Footer />
+    </React.Fragment>
+  );
 }
 
 export default MyApp;
