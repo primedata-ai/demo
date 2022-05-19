@@ -1,0 +1,10 @@
+{
+  "default": {
+    "error": "Error"
+  },
+  "page": {
+    "home": {
+      "hello": "Hello"
+    }
+  }
+}

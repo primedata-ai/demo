@@ -1,0 +1,10 @@
+{
+  "default": {
+    "error": "Lỗi"
+  },
+  "page": {
+    "home": {
+      "hello": "CHao xìn"
+    }
+  }
+}
