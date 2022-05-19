@@ -11,6 +11,19 @@ const Home: NextPage = () => {
   const { t } = useTranslation();
   return (
     <React.Fragment>
+      {/** Embeded script to home page */}
+      <Script src="/vendor/jquery/jquery-3.2.1.min.js" strategy="beforeInteractive"></Script>
+      <Script src="/vendor/animsition/js/animsition.min.js" strategy="beforeInteractive"></Script>
+      <Script src="/vendor/bootstrap/js/popper.js" strategy="beforeInteractive"></Script>
+      <Script src="/vendor/bootstrap/js/bootstrap.min.js" strategy="beforeInteractive"></Script>
+      <Script src="/vendor/select2/select2.min.js" strategy="beforeInteractive"></Script>
+      <Script src="/vendor/MagnificPopup/jquery.magnific-popup.min.js" strategy="beforeInteractive"></Script>
+      <Script src="/vendor/parallax100/parallax100.js" strategy="beforeInteractive"></Script>
+      <Script src="/vendor/perfect-scrollbar/perfect-scrollbar.min.js" strategy="beforeInteractive"></Script>
+      <Script src="/vendor/slick/slick.min.js" strategy="beforeInteractive"></Script>
+      <Script src="/vendor/daterangepicker/moment.min.js" strategy="beforeInteractive"></Script>
+      <Script src="/vendor/daterangepicker/daterangepicker.js" strategy="beforeInteractive"></Script>
+      <Script async src="/js/slick-custom.js" strategy="afterInteractive"></Script>
       {/* <Header/> */}
 
       <div className="wrap-header-cart js-panel-cart">
@@ -101,13 +114,6 @@ const Home: NextPage = () => {
 
       <ProductDetailPopup/>
 
-
-      <Script async src="/vendor/jquery/jquery-3.2.1.min.js" strategy="afterInteractive"></Script>
-      <Script async src="/vendor/animsition/js/animsition.min.js" strategy="afterInteractive"></Script>
-      <Script async src="/vendor/bootstrap/js/popper.js" strategy="afterInteractive"></Script>
-      <Script async src="/vendor/bootstrap/js/bootstrap.min.js" strategy="afterInteractive"></Script>
-      <Script async src="/vendor/select2/select2.min.js" strategy="afterInteractive"></Script>
-
       <Script async strategy="afterInteractive">{
         `
             $(".js-select2").each(function(){
@@ -117,15 +123,7 @@ const Home: NextPage = () => {
             });
           })`
       }</Script>
-
-      <Script async src="/vendor/daterangepicker/moment.min.js" strategy="afterInteractive"></Script>
-      <Script async src="/vendor/daterangepicker/daterangepicker.js" strategy="afterInteractive"></Script>
-      <Script async src="/vendor/slick/slick.min.js" strategy="afterInteractive"></Script>
-      <Script async src="/js/slick-custom.js" strategy="afterInteractive"></Script>
-      <Script async src="/vendor/parallax100/parallax100.js" strategy="afterInteractive"></Script>
       <Script async strategy="afterInteractive">{`$('.parallax100').parallax100();`}</Script>
-
-      <Script async src="/vendor/MagnificPopup/jquery.magnific-popup.min.js" strategy="afterInteractive"></Script>
 
       <Script async strategy="afterInteractive">
         {
@@ -186,8 +184,6 @@ const Home: NextPage = () => {
           `
         }
       </Script>
-
-      <Script async src="/vendor/perfect-scrollbar/perfect-scrollbar.min.js" strategy="afterInteractive"></Script>
 
       <Script async strategy="afterInteractive">
         {
