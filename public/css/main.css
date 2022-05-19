@@ -3330,3 +3330,38 @@ input.num-product::-webkit-inner-spin-button {
   }
 
 }
+
+.lang-menu:hover .menu-hover {
+  z-index: 2000;
+  opacity: 1;
+}
+
+.pos-relative {
+  position: relative;
+}
+
+.menu-hover {
+  position: absolute;
+  top: 100%;
+  background: #222222;
+  width: 100%;
+  border-left: 1px solid rgba(255,255,255, .3);
+  border-right: 1px solid rgba(255,255,255, .3);
+  transition: opacity 1s;
+  opacity: 0;
+} 
+
+.sub-menu-hover {
+  padding: 3px 0;
+  color: #b2b2b2;
+  border-bottom: 1px solid rgba(255,255,255, .3);
+  text-align: center;
+}
+
+.sub-menu-hover:first {
+  border-top: 1px solid #b2b2b2;
+}
+
+.sub-menu-hover:hover {
+  color: #6c7ae0;
+}

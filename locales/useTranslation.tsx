@@ -5,7 +5,11 @@ export const DEFAULT_KEY = "default.error";
 
 const useTranslation = () => {
   const router = useRouter();
-  const activeLang: string = router.locale ? router.locale : "vi";
+  const getActiveLocale = (): string => {
+    return router.locale ? router.locale : "vi";
+  }
+
+  const activeLang = getActiveLocale();
 
   const findValue = (dict: any, key: string[]): any => {
     if (key?.length === 0) 
@@ -26,7 +30,8 @@ const useTranslation = () => {
   }
 
   return {
-    t
+    t, 
+    getActiveLocale
   }
 }
 

@@ -1,6 +1,17 @@
+import useTranslation from 'locales/useTranslation';
+import Link from 'next/link';
+import { useRouter } from 'next/router';
 import React from 'react';
 
 const Header = (props: any) => {
+  const { t } = useTranslation();
+  const router = useRouter();
+  const { pathname, query, asPath, locale } = router;
+
+  const switchLanguage = (nextLocale: string): void => {
+    router.push({pathname, query}, asPath, {locale: nextLocale})
+  }
+
   return (
     <header>
       {/* Header desktop */}
@@ -9,20 +20,26 @@ const Header = (props: any) => {
         <div className="top-bar">
           <div className="content-topbar flex-sb-m h-full container">
             <div className="left-top-bar">
-              Free shipping for standard order over $100
+              {t("header.texts.free_shipping")}
             </div>
             <div className="right-top-bar flex-w h-full">
               <a href="./admin/public/index.html" className="flex-c-m trans-04 p-lr-25">
-                Admin
+                {t("header.texts.admin")}
               </a>
               <a href="#" className="flex-c-m trans-04 p-lr-25">
-                Help &amp; FAQs
+                {t("header.texts.help_faqs")}
               </a>
               <a href="#" className="flex-c-m trans-04 p-lr-25">
-                My Account
+                {t("header.texts.my_account")}
               </a>
-              <a href="#" className="flex-c-m trans-04 p-lr-25">
-                EN
+              <a href="#" className="flex-c-m trans-04 p-lr-25 pos-relative lang-menu">
+                <span>{locale?.toUpperCase()}</span>
+                <ul className='menu-hover'>
+                  <li className='sub-menu-hover'>
+                    <span onClick={() => switchLanguage("vi")}>VI</span>
+                  </li>
+                  <li className='sub-menu-hover'onClick={() => switchLanguage("en")}>EN</li>
+                </ul>
               </a>
               <a href="#" className="flex-c-m trans-04 p-lr-25">
                 USD
@@ -48,19 +65,19 @@ const Header = (props: any) => {
                   </ul>
                 </li>
                 <li>
-                  <a href="/product.html">Shop</a>
+                  <a href="/product.html">{t("header.texts.shop")}</a>
                 </li>
                 <li className="label1" data-label1="hot">
-                  <a href="/shoping-cart.html">Features</a>
+                  <a href="/shoping-cart.html">{t("header.texts.features")}</a>
                 </li>
                 <li>
-                  <a href="/blog.html">Blog</a>
+                  <a href="/blog.html">{t("header.texts.blog")}</a>
                 </li>
                 <li>
-                  <a href="/about.html">About</a>
+                  <a href="/about.html">{t("header.texts.about")}</a>
                 </li>
                 <li>
-                  <a href="/contact.html">Contact</a>
+                  <a href="/contact.html">{t("header.texts.contact")}</a>
                 </li>
               </ul>
             </div>

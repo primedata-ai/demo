@@ -6,5 +6,18 @@
     "home": {
       "hello": "Hello"
     }
+  },
+  "header": {
+    "texts": {
+      "free_shipping": "Free shipping for standard order over $100",
+      "admin": "Admin",
+      "help_faqs": "Help & FAQs",
+      "my_account": "My Account",
+      "contact": "Contact",
+      "about": "About",
+      "blog": "Blog",
+      "shop": "Shop",
+      "features": "Features"
+    }
   }
 }

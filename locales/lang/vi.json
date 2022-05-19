@@ -6,5 +6,18 @@
     "home": {
       "hello": "CHao xìn"
     }
+  },
+  "header": {
+    "texts": {
+      "free_shipping": "Miễn phí vận chuyển cho đơn hàng có giá trị trên 100$",
+      "admin": "Quản trị",
+      "help_faqs": "Trợ giúp và các câu hỏi thường gặp",
+      "my_account": "Tài khoản của tôi",
+      "contact": "Liên hệ",
+      "about": "Về chúng tôi",
+      "blog": "Blog",
+      "shop": "Mua sắm",
+      "features": "Tính năng"
+    }
   }
 }
