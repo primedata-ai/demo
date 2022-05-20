@@ -18,7 +18,7 @@ const Home: NextPage = () => {
       <Script src="/vendor/animsition/css/animsition.min.css" strategy="beforeInteractive"></Script>
       <Script src="/vendor/bootstrap/js/popper.js" strategy="beforeInteractive"></Script>
       <Script src="/vendor/bootstrap/js/bootstrap.min.js" strategy="beforeInteractive"></Script>
-      <Script src="/vendor/select2/select2.js" strategy="beforeInteractive"></Script>
+      <Script src="/vendor/select2/select2.min.js" strategy="beforeInteractive"></Script>
       <Script src="/vendor/MagnificPopup/jquery.magnific-popup.min.js" strategy="beforeInteractive"></Script>
       <Script src="/vendor/parallax100/parallax100.js" strategy="beforeInteractive"></Script>
       <Script src="/vendor/perfect-scrollbar/perfect-scrollbar.min.js" strategy="beforeInteractive"></Script>
