@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import type {NextPage} from 'next'
 import ProductDetailPopup from "../components/containers/ProductDetailPopup";
 import CollectionSlidesOverview from "../components/containers/CollectionSlidesOverview";
@@ -9,14 +9,16 @@ import useTranslation from 'locales/useTranslation';
 
 const Home: NextPage = () => {
   const { t } = useTranslation();
+
   return (
     <React.Fragment>
       {/** Embeded script to home page */}
       <Script src="/vendor/jquery/jquery-3.2.1.min.js" strategy="beforeInteractive"></Script>
       <Script src="/vendor/animsition/js/animsition.min.js" strategy="beforeInteractive"></Script>
+      <Script src="/vendor/animsition/css/animsition.min.css" strategy="beforeInteractive"></Script>
       <Script src="/vendor/bootstrap/js/popper.js" strategy="beforeInteractive"></Script>
       <Script src="/vendor/bootstrap/js/bootstrap.min.js" strategy="beforeInteractive"></Script>
-      <Script src="/vendor/select2/select2.min.js" strategy="beforeInteractive"></Script>
+      <Script src="/vendor/select2/select2.js" strategy="beforeInteractive"></Script>
       <Script src="/vendor/MagnificPopup/jquery.magnific-popup.min.js" strategy="beforeInteractive"></Script>
       <Script src="/vendor/parallax100/parallax100.js" strategy="beforeInteractive"></Script>
       <Script src="/vendor/perfect-scrollbar/perfect-scrollbar.min.js" strategy="beforeInteractive"></Script>
@@ -30,6 +32,16 @@ const Home: NextPage = () => {
 
       <ProductBanner/>
 
+      <Script strategy="afterInteractive" type="text/javascript">{
+        `
+            $(".js-select2").each(function(){
+              $(this).select2({
+                minimumResultsForSearch: 20,
+                dropdownParent: $(this).next('.dropDownSelect2')
+              });
+          })`
+      }</Script>
+
       <ProductListSection/>
 
       {/* <Footer/> */}
@@ -42,15 +54,6 @@ const Home: NextPage = () => {
 
       <ProductDetailPopup/>
 
-      <Script async strategy="afterInteractive">{
-        `
-            $(".js-select2").each(function(){
-            $(this).select2({
-              minimumResultsForSearch: 20,
-              dropdownParent: $(this).next('.dropDownSelect2')
-            });
-          })`
-      }</Script>
       <Script async strategy="afterInteractive">{`$('.parallax100').parallax100();`}</Script>
 
       <Script async strategy="afterInteractive">
