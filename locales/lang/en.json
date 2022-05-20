@@ -7,8 +7,12 @@
       "hello": "Hello"
     }
   },
+  "common": {
+    "shop_now": "Shop Now"
+  },
   "header": {
     "texts": {
+      "home": "Home",
       "free_shipping": "Free shipping for standard order over $100",
       "admin": "Admin",
       "help_faqs": "Help & FAQs",
@@ -17,7 +21,11 @@
       "about": "About",
       "blog": "Blog",
       "shop": "Shop",
-      "features": "Features"
+      "features": "Features",
+      "your_cart": "Your Cart",
+      "total": "Total",
+      "view_cart": "View Cart",
+      "checkout": "Check Out"
     }
   }
 }

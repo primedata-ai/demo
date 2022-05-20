@@ -7,8 +7,12 @@
       "hello": "CHao xìn"
     }
   },
+  "common": {
+    "shop_now": " Mua ngay"
+  },
   "header": {
     "texts": {
+      "home": "Trang chủ",
       "free_shipping": "Miễn phí vận chuyển cho đơn hàng có giá trị trên 100$",
       "admin": "Quản trị",
       "help_faqs": "Trợ giúp và các câu hỏi thường gặp",
@@ -17,7 +21,11 @@
       "about": "Về chúng tôi",
       "blog": "Blog",
       "shop": "Mua sắm",
-      "features": "Tính năng"
+      "features": "Tính năng",
+      "your_cart": "Giỏ hàng của bạn",
+      "total": "Tổng cộng",
+      "view_cart": "Xem giỏ hàng",
+      "checkout": "Thanh toán"
     }
   }
 }

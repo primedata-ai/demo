@@ -1,6 +1,8 @@
+import useTranslation from 'locales/useTranslation';
 import React from 'react';
 
 const CollectionSlidesOverview = (props: any) => {
+  const { t } = useTranslation();
   return (
     <section className="section-slide">
       <div className="wrap-slick1">
@@ -21,7 +23,7 @@ const CollectionSlidesOverview = (props: any) => {
                 <div className="layer-slick1 animated visible-false" data-appear="zoomIn" data-delay={1600}>
                   <a href="/product.html"
                      className="flex-c-m stext-101 cl0 size-101 bg1 bor1 hov-btn1 p-lr-15 trans-04">
-                    Shop Now
+                    {t("common.shop_now")}
                   </a>
                 </div>
               </div>
@@ -43,7 +45,7 @@ const CollectionSlidesOverview = (props: any) => {
                 <div className="layer-slick1 animated visible-false" data-appear="slideInUp" data-delay={1600}>
                   <a href="/product.html"
                      className="flex-c-m stext-101 cl0 size-101 bg1 bor1 hov-btn1 p-lr-15 trans-04">
-                    Shop Now
+                    {t("common.shop_now")}
                   </a>
                 </div>
               </div>
@@ -65,7 +67,7 @@ const CollectionSlidesOverview = (props: any) => {
                 <div className="layer-slick1 animated visible-false" data-appear="rotateIn" data-delay={1600}>
                   <a href="/product.html"
                      className="flex-c-m stext-101 cl0 size-101 bg1 bor1 hov-btn1 p-lr-15 trans-04">
-                    Shop Now
+                    {t("common.shop_now")}
                   </a>
                 </div>
               </div>
