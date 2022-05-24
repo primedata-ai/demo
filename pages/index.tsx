@@ -4,7 +4,7 @@ import ProductDetailPopup from "../components/containers/ProductDetailPopup";
 import CollectionSlidesOverview from "../components/containers/CollectionSlidesOverview";
 import ProductBanner from "../components/containers/ProductBanner";
 import ProductListSection from "../components/containers/ProductListSection";
-import CardHeader from "../components/containers/CardHeader";
+import CartHeader from "../components/containers/CartHeader";
 import Header from "../components/containers/Header";
 import Script from "next/script";
 
@@ -24,7 +24,7 @@ const Home: NextPage = () => {
   return (
     <React.Fragment>
       <Header/>
-      <CardHeader/>
+      <CartHeader/>
       <CollectionSlidesOverview/>
 
       <ProductBanner/>

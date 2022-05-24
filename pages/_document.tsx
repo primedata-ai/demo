@@ -1,5 +1,6 @@
 import Document, {Html, Head, Main, NextScript, DocumentContext} from 'next/document'
 import React from "react";
+import Script from "next/script";
 
 class DocumentApp extends Document {
   static async getInitialProps(ctx: DocumentContext) {
@@ -20,6 +21,7 @@ class DocumentApp extends Document {
         <body className={"animsition"}>
           <Main/>
           <NextScript/>
+
         </body>
       </Html>
     )

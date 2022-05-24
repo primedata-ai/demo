@@ -3,7 +3,7 @@ import type {NextPage} from 'next'
 import ProductDetailPopup from "../../components/containers/ProductDetailPopup";
 import Script from 'next/script'
 import Header from "../../components/containers/Header";
-import CardHeader from "../../components/containers/CardHeader";
+import CartHeader from "../../components/containers/CartHeader";
 import Breadcrumb from "../../components/containers/Breadcrumb";
 import ProductDetailSection from "../../components/containers/ProductDetailSection";
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
@@ -38,7 +38,7 @@ const ProductDetail: NextPage = () => {
       <Script async src="/js/slick-custom.js" strategy="afterInteractive"></Script>
 
       <Header className={"header-v4"}/>
-      <CardHeader/>
+      <CartHeader/>
 
       <Breadcrumb/>
 

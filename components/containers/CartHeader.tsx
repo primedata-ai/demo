@@ -1,7 +1,7 @@
 import React from 'react';
 import { useTranslation } from 'next-i18next';
 
-const CardHeader = (props: any) => {
+const CartHeader = (props: any) => {
   const {t} = useTranslation()
   return (
     <div className="wrap-header-cart js-panel-cart">
@@ -62,11 +62,11 @@ const CardHeader = (props: any) => {
               {t("header.texts.total")}: $75.00
             </div>
             <div className="header-cart-buttons flex-w w-full">
-              <a href="/shoping-cart.html"
+              <a href="/cart"
                  className="flex-c-m stext-101 cl0 size-107 bg3 bor2 hov-btn3 p-lr-15 trans-04 m-r-8 m-b-10">
                 {t("header.texts.view_cart")}
               </a>
-              <a href="/shoping-cart.html"
+              <a href="/cart"
                  className="flex-c-m stext-101 cl0 size-107 bg3 bor2 hov-btn3 p-lr-15 trans-04 m-b-10">
                 {t("header.texts.checkout")}
               </a>
@@ -79,4 +79,4 @@ const CardHeader = (props: any) => {
 };
 
 
-export default CardHeader;
+export default CartHeader;

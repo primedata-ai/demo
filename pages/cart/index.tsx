@@ -1,23 +1,12 @@
 import React from "react";
 import type {NextPage} from 'next'
-import ProductDetailPopup from "../../components/containers/ProductDetailPopup";
 import Script from 'next/script'
-import ProductListSection from "../../components/containers/ProductListSection";
 import Header from "../../components/containers/Header";
-import CartHeader from "components/containers/CartHeader";
-import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
+import CartHeader from "../../components/containers/CartHeader";
+import Breadcrumb from "../../components/containers/Breadcrumb";
+import CartContainer from "../../components/containers/CartContainer";
 
-export async function getStaticProps({ locale } : {locale: string}) {
-  return {
-    props: {
-      ...(await serverSideTranslations(locale, ['common'])),
-      // Will be passed to the page component as props
-    },
-  };
-}
-
-
-const Products: NextPage = () => {
+const Cart: NextPage = () => {
 
   return (
     <React.Fragment>
@@ -25,16 +14,9 @@ const Products: NextPage = () => {
       <Header className={"header-v4"}/>
       <CartHeader/>
 
+      <Breadcrumb/>
 
-      <ProductListSection isProductPage={true} hasTitle={false}/>
-
-      <div className="btn-back-to-top" id="myBtn">
-        <span className="symbol-btn-back-to-top">
-          <i className="zmdi zmdi-chevron-up"></i>
-        </span>
-      </div>
-
-      <ProductDetailPopup/>
+      <CartContainer/>
 
       {/** Embeded script to products page */}
       <Script src="/vendor/jquery/jquery-3.2.1.min.js" strategy="beforeInteractive"></Script>
@@ -137,4 +119,4 @@ const Products: NextPage = () => {
   )
 }
 
-export default Products
+export default Cart

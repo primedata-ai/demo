@@ -10,7 +10,7 @@ mixin ComponentCard(config)
   - var previewId = `${config.title.toLowerCase().split(' ').join('-')}-preview`;
   - var codeId = `${config.title.toLowerCase().replace('(','').replace(')','').split(' ').join('-')}-code`;
   .card.shadow-none.border.border-300(data-component-card)&attributes(attributes)
-    .card-header.p-4.border-bottom.border-300.bg-soft(class=config.cardHeaderClass)
+    .card-header.p-4.border-bottom.border-300.bg-soft(class=config.CartHeaderClass)
       .row.g-3.justify-content-between(class=`${config.description ? 'align-items-end' : 'align-items-center'}`)
         .col-12.col-md
           if config.title
@@ -27,7 +27,7 @@ mixin ComponentCard(config)
               button.btn.btn-link.px-2.text-900.copy-code-btn(type='button')
                 .fas.fa-copy.me-1
                 | Copy Code
-              a.btn.btn-sm.btn-phoenix-primary.code-btn.ms-2(data-bs-toggle='collapse', href=`#${codeId}`, role='button', aria-controls=codeId, aria-expanded='false') 
+              a.btn.btn-sm.btn-phoenix-primary.code-btn.ms-2(data-bs-toggle='collapse', href=`#${codeId}`, role='button', aria-controls=codeId, aria-expanded='false')
                 span.me-2(data-feather="code")
                 | View code
               a.btn.btn-sm.btn-phoenix-primary.preview-btn.ms-2
@@ -41,7 +41,7 @@ mixin ComponentCard(config)
               block
       .p-4.code-to-copy
         block
-    
+
 
 mixin ComponentCardLib(lang = 'html')
   pre&attributes(attributes)

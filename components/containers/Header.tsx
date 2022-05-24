@@ -57,27 +57,27 @@ const Header = (props: any) => {
             <div className="menu-desktop">
               <ul className="main-menu">
                 <li className="active-menu">
-                  <a href="/index.html">{t("header.texts.home")}</a>
+                  <a href="/">{t("header.texts.home")}</a>
                   <ul className="sub-menu">
-                    <li><a href="/index.html">{t("header.texts.home")} 1</a></li>
+                    <li><a href="/">{t("header.texts.home")} 1</a></li>
                     <li><a href="/home-02.html">{t("header.texts.home")} 2</a></li>
                     <li><a href="/home-03.html">{t("header.texts.home")} 3</a></li>
                   </ul>
                 </li>
                 <li>
-                  <a href="/product.html">{t("header.texts.shop")}</a>
+                  <a href="/products">{t("header.texts.shop")}</a>
                 </li>
                 <li className="label1" data-label1="hot">
-                  <a href="/shoping-cart.html">{t("header.texts.features")}</a>
+                  <a href="/cart">{t("header.texts.features")}</a>
                 </li>
                 <li>
-                  <a href="/blog.html">{t("header.texts.blog")}</a>
+                  <a href="/blog">{t("header.texts.blog")}</a>
                 </li>
                 <li>
-                  <a href="/about.html">{t("header.texts.about")}</a>
+                  <a href="/about">{t("header.texts.about")}</a>
                 </li>
                 <li>
-                  <a href="/contact.html">{t("header.texts.contact")}</a>
+                  <a href="/contact">{t("header.texts.contact")}</a>
                 </li>
               </ul>
             </div>
@@ -102,7 +102,7 @@ const Header = (props: any) => {
       <div className="wrap-header-mobile">
         {/* Logo moblie */}
         <div className="logo-mobile">
-          <a href="index.html"><img src="/images/icons/logo-01.png" alt="IMG-LOGO"/></a>
+          <a href="/"><img src="/images/icons/logo-01.png" alt="IMG-LOGO"/></a>
         </div>
         {/* Icon header */}
         <div className="wrap-icon-header flex-w flex-r-m m-r-15">
@@ -152,9 +152,9 @@ const Header = (props: any) => {
         </ul>
         <ul className="main-menu-m">
           <li>
-            <a href="/index.html">Home</a>
+            <a href="/">Home</a>
             <ul className="sub-menu-m">
-              <li><a href="/index.html">Homepage 1</a></li>
+              <li><a href="/">Homepage 1</a></li>
               <li><a href="/home-02.html">Homepage 2</a></li>
               <li><a href="/home-03.html">Homepage 3</a></li>
             </ul>
@@ -163,19 +163,19 @@ const Header = (props: any) => {
               </span>
           </li>
           <li>
-            <a href="/product.html">Shop</a>
+            <a href="/products">Shop</a>
           </li>
           <li>
-            <a href="/shoping-cart.html" className="label1 rs1" data-label1="hot">Features</a>
+            <a href="/cart" className="label1 rs1" data-label1="hot">Features</a>
           </li>
           <li>
-            <a href="/blog.html">Blog</a>
+            <a href="/blog">Blog</a>
           </li>
           <li>
-            <a href="/about.html">About</a>
+            <a href="/about">About</a>
           </li>
           <li>
-            <a href="/contact.html">Contact</a>
+            <a href="/contact">Contact</a>
           </li>
         </ul>
       </div>

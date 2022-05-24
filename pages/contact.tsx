@@ -1,23 +1,11 @@
 import React from "react";
 import type {NextPage} from 'next'
-import ProductDetailPopup from "../../components/containers/ProductDetailPopup";
 import Script from 'next/script'
-import ProductListSection from "../../components/containers/ProductListSection";
-import Header from "../../components/containers/Header";
-import CartHeader from "components/containers/CartHeader";
-import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
+import Header from "../components/containers/Header";
+import CartHeader from "../components/containers/CartHeader";
+import ContactContainer from "../components/containers/ContactContainer";
 
-export async function getStaticProps({ locale } : {locale: string}) {
-  return {
-    props: {
-      ...(await serverSideTranslations(locale, ['common'])),
-      // Will be passed to the page component as props
-    },
-  };
-}
-
-
-const Products: NextPage = () => {
+const Contact: NextPage = () => {
 
   return (
     <React.Fragment>
@@ -25,16 +13,13 @@ const Products: NextPage = () => {
       <Header className={"header-v4"}/>
       <CartHeader/>
 
-
-      <ProductListSection isProductPage={true} hasTitle={false}/>
+      <ContactContainer/>
 
       <div className="btn-back-to-top" id="myBtn">
         <span className="symbol-btn-back-to-top">
           <i className="zmdi zmdi-chevron-up"></i>
         </span>
       </div>
-
-      <ProductDetailPopup/>
 
       {/** Embeded script to products page */}
       <Script src="/vendor/jquery/jquery-3.2.1.min.js" strategy="beforeInteractive"></Script>
@@ -132,9 +117,11 @@ const Products: NextPage = () => {
         }
       </Script>
 
+      <Script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAKFWBqlKAGCeS1rMVoaNlwyayu0e0YRes" strategy="lazyOnload"></Script>
+      <Script src="/js/map-custom.js" strategy="afterInteractive"></Script>
       <Script async src="/js/main.js" strategy="afterInteractive"></Script>
     </React.Fragment>
   )
 }
 
-export default Products
+export default Contact
