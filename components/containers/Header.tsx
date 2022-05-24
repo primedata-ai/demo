@@ -13,7 +13,7 @@ const Header = (props: any) => {
   }
 
   return (
-    <header>
+    <header className={props?.className ? props.className : ""}>
       {/* Header desktop */}
       <div className="container-menu-desktop">
         {/* Topbar */}

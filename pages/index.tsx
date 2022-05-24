@@ -1,23 +1,36 @@
-import React, {useEffect} from "react";
+import React from "react";
 import type {NextPage} from 'next'
 import ProductDetailPopup from "../components/containers/ProductDetailPopup";
 import CollectionSlidesOverview from "../components/containers/CollectionSlidesOverview";
-import Script from 'next/script'
 import ProductBanner from "../components/containers/ProductBanner";
 import ProductListSection from "../components/containers/ProductListSection";
-import useTranslation from 'locales/useTranslation';
 import CardHeader from "../components/containers/CardHeader";
 import Header from "../components/containers/Header";
+import Script from "next/script";
 
 const Home: NextPage = () => {
-  const {t} = useTranslation();
 
   return (
     <React.Fragment>
+      <Header/>
+      <CardHeader/>
+      <CollectionSlidesOverview/>
+
+      <ProductBanner/>
+
+      <ProductListSection hasTitle={true}/>
+
+      <div className="btn-back-to-top" id="myBtn">
+        <span className="symbol-btn-back-to-top">
+          <i className="zmdi zmdi-chevron-up"/>
+        </span>
+      </div>
+
+      <ProductDetailPopup/>
+
       {/** Embeded script to home page */}
       <Script src="/vendor/jquery/jquery-3.2.1.min.js" strategy="beforeInteractive"></Script>
       <Script src="/vendor/animsition/js/animsition.min.js" strategy="beforeInteractive"></Script>
-      <Script src="/vendor/animsition/css/animsition.min.css" strategy="beforeInteractive"></Script>
       <Script src="/vendor/bootstrap/js/popper.js" strategy="beforeInteractive"></Script>
       <Script src="/vendor/bootstrap/js/bootstrap.min.js" strategy="beforeInteractive"></Script>
       <Script src="/vendor/select2/select2.min.js" strategy="beforeInteractive"></Script>
@@ -28,11 +41,6 @@ const Home: NextPage = () => {
       <Script src="/vendor/daterangepicker/moment.min.js" strategy="beforeInteractive"></Script>
       <Script src="/vendor/daterangepicker/daterangepicker.js" strategy="beforeInteractive"></Script>
       <Script async src="/js/slick-custom.js" strategy="afterInteractive"></Script>
-      <Header/>
-      <CardHeader/>
-      <CollectionSlidesOverview/>
-
-      <ProductBanner/>
 
       <Script strategy="afterInteractive" type="text/javascript">{
         `
@@ -44,17 +52,7 @@ const Home: NextPage = () => {
           })`
       }</Script>
 
-      <ProductListSection hasTitle={true}/>
 
-      {/* <Footer/> */}
-
-      <div className="btn-back-to-top" id="myBtn">
-        <span className="symbol-btn-back-to-top">
-          <i className="zmdi zmdi-chevron-up"/>
-        </span>
-      </div>
-
-      <ProductDetailPopup/>
 
       <Script async strategy="afterInteractive">{`$('.parallax100').parallax100();`}</Script>
 

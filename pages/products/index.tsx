@@ -1,23 +1,33 @@
-import React  from "react";
+import React from "react";
 import type {NextPage} from 'next'
 import ProductDetailPopup from "../../components/containers/ProductDetailPopup";
 import Script from 'next/script'
 import ProductListSection from "../../components/containers/ProductListSection";
-import useTranslation from 'locales/useTranslation';
-import Breadcrumb from "../../components/containers/Breadcrumb";
-import ProductDetailSection from "../../components/containers/ProductDetailSection";
 import Header from "../../components/containers/Header";
 import CardHeader from "../../components/containers/CardHeader";
 
 const Products: NextPage = () => {
-  const { t } = useTranslation();
 
   return (
     <React.Fragment>
+
+      <Header className={"header-v4"}/>
+      <CardHeader/>
+
+
+      <ProductListSection isProductPage={true} hasTitle={false}/>
+
+      <div className="btn-back-to-top" id="myBtn">
+        <span className="symbol-btn-back-to-top">
+          <i className="zmdi zmdi-chevron-up"></i>
+        </span>
+      </div>
+
+      <ProductDetailPopup/>
+
       {/** Embeded script to products page */}
       <Script src="/vendor/jquery/jquery-3.2.1.min.js" strategy="beforeInteractive"></Script>
       <Script src="/vendor/animsition/js/animsition.min.js" strategy="beforeInteractive"></Script>
-      <Script src="/vendor/animsition/css/animsition.min.css" strategy="beforeInteractive"></Script>
       <Script src="/vendor/bootstrap/js/popper.js" strategy="beforeInteractive"></Script>
       <Script src="/vendor/bootstrap/js/bootstrap.min.js" strategy="beforeInteractive"></Script>
       <Script src="/vendor/select2/select2.min.js" strategy="beforeInteractive"></Script>
@@ -28,19 +38,6 @@ const Products: NextPage = () => {
       <Script src="/vendor/daterangepicker/moment.min.js" strategy="beforeInteractive"></Script>
       <Script src="/vendor/daterangepicker/daterangepicker.js" strategy="beforeInteractive"></Script>
       <Script async src="/js/slick-custom.js" strategy="afterInteractive"></Script>
-      <Header/>
-      <CardHeader/>
-
-
-      <ProductListSection isProductPage={true} hasTitle={false} />
-
-      <div className="btn-back-to-top" id="myBtn">
-        <span className="symbol-btn-back-to-top">
-          <i className="zmdi zmdi-chevron-up"></i>
-        </span>
-      </div>
-
-      <ProductDetailPopup/>
 
       <Script async strategy="afterInteractive">{`$('.parallax100').parallax100();`}</Script>
 
