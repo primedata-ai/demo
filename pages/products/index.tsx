@@ -1,20 +1,20 @@
-import React, {useEffect} from "react";
+import React  from "react";
 import type {NextPage} from 'next'
-import ProductDetailPopup from "../components/containers/ProductDetailPopup";
-import CollectionSlidesOverview from "../components/containers/CollectionSlidesOverview";
+import ProductDetailPopup from "../../components/containers/ProductDetailPopup";
 import Script from 'next/script'
-import ProductBanner from "../components/containers/ProductBanner";
-import ProductListSection from "../components/containers/ProductListSection";
+import ProductListSection from "../../components/containers/ProductListSection";
 import useTranslation from 'locales/useTranslation';
-import CardHeader from "../components/containers/CardHeader";
-import Header from "../components/containers/Header";
+import Breadcrumb from "../../components/containers/Breadcrumb";
+import ProductDetailSection from "../../components/containers/ProductDetailSection";
+import Header from "../../components/containers/Header";
+import CardHeader from "../../components/containers/CardHeader";
 
-const Home: NextPage = () => {
-  const {t} = useTranslation();
+const Products: NextPage = () => {
+  const { t } = useTranslation();
 
   return (
     <React.Fragment>
-      {/** Embeded script to home page */}
+      {/** Embeded script to products page */}
       <Script src="/vendor/jquery/jquery-3.2.1.min.js" strategy="beforeInteractive"></Script>
       <Script src="/vendor/animsition/js/animsition.min.js" strategy="beforeInteractive"></Script>
       <Script src="/vendor/animsition/css/animsition.min.css" strategy="beforeInteractive"></Script>
@@ -30,27 +30,13 @@ const Home: NextPage = () => {
       <Script async src="/js/slick-custom.js" strategy="afterInteractive"></Script>
       <Header/>
       <CardHeader/>
-      <CollectionSlidesOverview/>
 
-      <ProductBanner/>
 
-      <Script strategy="afterInteractive" type="text/javascript">{
-        `
-            $(".js-select2").each(function(){
-              $(this).select2({
-                minimumResultsForSearch: 20,
-                dropdownParent: $(this).next('.dropDownSelect2')
-              });
-          })`
-      }</Script>
-
-      <ProductListSection hasTitle={true}/>
-
-      {/* <Footer/> */}
+      <ProductListSection isProductPage={true} hasTitle={false} />
 
       <div className="btn-back-to-top" id="myBtn">
         <span className="symbol-btn-back-to-top">
-          <i className="zmdi zmdi-chevron-up"/>
+          <i className="zmdi zmdi-chevron-up"></i>
         </span>
       </div>
 
@@ -143,4 +129,4 @@ const Home: NextPage = () => {
   )
 }
 
-export default Home
+export default Products

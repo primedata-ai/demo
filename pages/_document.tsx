@@ -42,7 +42,7 @@ class MyDocument extends Document {
 
         </Head>
 
-        <body className={"animsitio3n"}>
+        <body className={"animsition"}>
           <Main/>
           <NextScript/>
 

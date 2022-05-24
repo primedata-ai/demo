@@ -1,15 +1,14 @@
-import React, {useEffect} from "react";
+import React from "react";
 import type {NextPage} from 'next'
-import ProductDetailPopup from "../components/containers/ProductDetailPopup";
-import CollectionSlidesOverview from "../components/containers/CollectionSlidesOverview";
+import ProductDetailPopup from "../../../components/containers/ProductDetailPopup";
 import Script from 'next/script'
-import ProductBanner from "../components/containers/ProductBanner";
-import ProductListSection from "../components/containers/ProductListSection";
 import useTranslation from 'locales/useTranslation';
-import CardHeader from "../components/containers/CardHeader";
-import Header from "../components/containers/Header";
+import Header from "../../../components/containers/Header";
+import CardHeader from "../../../components/containers/CardHeader";
+import Breadcrumb from "../../../components/containers/Breadcrumb";
+import ProductDetailSection from "../../../components/containers/ProductDetailSection";
 
-const Home: NextPage = () => {
+const ProductDetail: NextPage = () => {
   const {t} = useTranslation();
 
   return (
@@ -30,9 +29,10 @@ const Home: NextPage = () => {
       <Script async src="/js/slick-custom.js" strategy="afterInteractive"></Script>
       <Header/>
       <CardHeader/>
-      <CollectionSlidesOverview/>
 
-      <ProductBanner/>
+      <Breadcrumb/>
+
+      <ProductDetailSection/>
 
       <Script strategy="afterInteractive" type="text/javascript">{
         `
@@ -44,9 +44,6 @@ const Home: NextPage = () => {
           })`
       }</Script>
 
-      <ProductListSection hasTitle={true}/>
-
-      {/* <Footer/> */}
 
       <div className="btn-back-to-top" id="myBtn">
         <span className="symbol-btn-back-to-top">
@@ -143,4 +140,4 @@ const Home: NextPage = () => {
   )
 }
 
-export default Home
+export default ProductDetail
