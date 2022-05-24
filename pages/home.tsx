@@ -1,28 +1,39 @@
 import React from "react";
 import type {NextPage} from 'next'
-import Script from 'next/script'
-import Header from "../../components/containers/Header";
-import CartHeader from "../../components/containers/CartHeader";
-import Breadcrumb from "../../components/containers/Breadcrumb";
-import PostDetailContainer from "../../components/containers/PostDetailContainer";
+import ProductDetailPopup from "../components/containers/ProductDetailPopup";
+import CollectionSlidesOverview from "../components/containers/CollectionSlidesOverview";
+import ProductBanner from "../components/containers/ProductBanner";
+import ProductListSection from "../components/containers/ProductListSection";
+import CartHeader from "../components/containers/CartHeader";
+import Header from "../components/containers/Header";
+import Script from "next/script";
+import Sidebar from "../components/containers/Sidebar";
+import BlogSliderContainer from "../components/containers/BlogSliderContainer";
 
-const PostDetail: NextPage = () => {
+const HomePage: NextPage = () => {
 
   return (
     <React.Fragment>
-
-      <Header className={"header-v4"}/>
+      <Header className={"header-v2"}/>
+      <Sidebar/>
       <CartHeader/>
-      <Breadcrumb/>
-      <PostDetailContainer/>
+      <CollectionSlidesOverview/>
+
+      <ProductBanner/>
+
+      <ProductListSection hasTitle={true}/>
+
+      <BlogSliderContainer/>
 
       <div className="btn-back-to-top" id="myBtn">
         <span className="symbol-btn-back-to-top">
-          <i className="zmdi zmdi-chevron-up"></i>
+          <i className="zmdi zmdi-chevron-up"/>
         </span>
       </div>
 
-      {/** Embeded script to products page */}
+      <ProductDetailPopup/>
+
+      {/** Embeded script to home page */}
       <Script src="/vendor/jquery/jquery-3.2.1.min.js" strategy="beforeInteractive"></Script>
       <Script src="/vendor/animsition/js/animsition.min.js" strategy="beforeInteractive"></Script>
       <Script src="/vendor/bootstrap/js/popper.js" strategy="beforeInteractive"></Script>
@@ -35,6 +46,17 @@ const PostDetail: NextPage = () => {
       <Script src="/vendor/daterangepicker/moment.min.js" strategy="beforeInteractive"></Script>
       <Script src="/vendor/daterangepicker/daterangepicker.js" strategy="beforeInteractive"></Script>
       <Script async src="/js/slick-custom.js" strategy="afterInteractive"></Script>
+
+      <Script strategy="afterInteractive" type="text/javascript">{
+        `
+            $(".js-select2").each(function(){
+              $(this).select2({
+                minimumResultsForSearch: 20,
+                dropdownParent: $(this).next('.dropDownSelect2')
+              });
+          })`
+      }</Script>
+
 
       <Script async strategy="afterInteractive">{`$('.parallax100').parallax100();`}</Script>
 
@@ -123,4 +145,4 @@ const PostDetail: NextPage = () => {
   )
 }
 
-export default PostDetail
+export default HomePage

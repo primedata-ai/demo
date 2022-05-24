@@ -60,8 +60,8 @@ const Header = (props: any) => {
                   <a href="/">{t("header.texts.home")}</a>
                   <ul className="sub-menu">
                     <li><a href="/">{t("header.texts.home")} 1</a></li>
-                    <li><a href="/home-02.html">{t("header.texts.home")} 2</a></li>
-                    <li><a href="/home-03.html">{t("header.texts.home")} 3</a></li>
+                    <li><a href="/home">{t("header.texts.home")} 2</a></li>
+                    <li><a href="/home-new">{t("header.texts.home")} 3</a></li>
                   </ul>
                 </li>
                 <li>
@@ -155,8 +155,8 @@ const Header = (props: any) => {
             <a href="/">Home</a>
             <ul className="sub-menu-m">
               <li><a href="/">Homepage 1</a></li>
-              <li><a href="/home-02.html">Homepage 2</a></li>
-              <li><a href="/home-03.html">Homepage 3</a></li>
+              <li><a href="/home">Homepage 2</a></li>
+              <li><a href="/home-new">Homepage 3</a></li>
             </ul>
             <span className="arrow-main-menu-m">
                 <i className="fa fa-angle-right" aria-hidden="true"/>

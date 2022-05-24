@@ -3,7 +3,7 @@ import React from 'react';
 const BlogContainer = (props: any) => {
   return (
     <React.Fragment>
-      <section className="bg-img1 txt-center p-lr-15 p-tb-92" style={{backgroundImage: 'url("images/bg-02.jpg")'}}>
+      <section className="bg-img1 txt-center p-lr-15 p-tb-92" style={{backgroundImage: 'url("/images/bg-02.jpg")'}}>
         <h2 className="ltext-105 cl0 txt-center">
           Blog
         </h2>
@@ -16,8 +16,8 @@ const BlogContainer = (props: any) => {
               <div className="p-r-45 p-r-0-lg">
                 {/* item blog */}
                 <div className="p-b-63">
-                  <a href="blog-detail.html" className="hov-img0 how-pos5-parent">
-                    <img src="images/blog-04.jpg" alt="IMG-BLOG"/>
+                  <a href="/blog/blog-slug" className="hov-img0 how-pos5-parent">
+                    <img src="/images/blog-04.jpg" alt="IMG-BLOG"/>
                     <div className="flex-col-c-m size-123 bg9 how-pos5">
                         <span className="ltext-107 cl2 txt-center">
                           22
@@ -29,7 +29,7 @@ const BlogContainer = (props: any) => {
                   </a>
                   <div className="p-t-32">
                     <h4 className="p-b-15">
-                      <a href="blog-detail.html" className="ltext-108 cl2 hov-cl1 trans-04">
+                      <a href="/blog/blog-slug" className="ltext-108 cl2 hov-cl1 trans-04">
                         8 Inspiring Ways to Wear Dresses in the Winter
                       </a>
                     </h4>
@@ -51,7 +51,7 @@ const BlogContainer = (props: any) => {
                             8 Comments
                           </span>
                         </span>
-                      <a href="blog-detail.html" className="stext-101 cl2 hov-cl1 trans-04 m-tb-10">
+                      <a href="/blog/blog-slug" className="stext-101 cl2 hov-cl1 trans-04 m-tb-10">
                         Continue Reading
                         <i className="fa fa-long-arrow-right m-l-9"/>
                       </a>
@@ -60,8 +60,8 @@ const BlogContainer = (props: any) => {
                 </div>
                 {/* item blog */}
                 <div className="p-b-63">
-                  <a href="blog-detail.html" className="hov-img0 how-pos5-parent">
-                    <img src="images/blog-05.jpg" alt="IMG-BLOG"/>
+                  <a href="/blog/blog-slug" className="hov-img0 how-pos5-parent">
+                    <img src="/images/blog-05.jpg" alt="IMG-BLOG"/>
                     <div className="flex-col-c-m size-123 bg9 how-pos5">
                         <span className="ltext-107 cl2 txt-center">
                           18
@@ -73,7 +73,7 @@ const BlogContainer = (props: any) => {
                   </a>
                   <div className="p-t-32">
                     <h4 className="p-b-15">
-                      <a href="blog-detail.html" className="ltext-108 cl2 hov-cl1 trans-04">
+                      <a href="/blog/blog-slug" className="ltext-108 cl2 hov-cl1 trans-04">
                         The Great Big List of Men’s Gifts for the Holidays
                       </a>
                     </h4>
@@ -95,7 +95,7 @@ const BlogContainer = (props: any) => {
                             8 Comments
                           </span>
                         </span>
-                      <a href="blog-detail.html" className="stext-101 cl2 hov-cl1 trans-04 m-tb-10">
+                      <a href="/blog/blog-slug" className="stext-101 cl2 hov-cl1 trans-04 m-tb-10">
                         Continue Reading
                         <i className="fa fa-long-arrow-right m-l-9"/>
                       </a>
@@ -104,8 +104,8 @@ const BlogContainer = (props: any) => {
                 </div>
                 {/* item blog */}
                 <div className="p-b-63">
-                  <a href="blog-detail.html" className="hov-img0 how-pos5-parent">
-                    <img src="images/blog-06.jpg" alt="IMG-BLOG"/>
+                  <a href="/blog/blog-slug" className="hov-img0 how-pos5-parent">
+                    <img src="/images/blog-06.jpg" alt="IMG-BLOG"/>
                     <div className="flex-col-c-m size-123 bg9 how-pos5">
                         <span className="ltext-107 cl2 txt-center">
                           16
@@ -117,7 +117,7 @@ const BlogContainer = (props: any) => {
                   </a>
                   <div className="p-t-32">
                     <h4 className="p-b-15">
-                      <a href="blog-detail.html" className="ltext-108 cl2 hov-cl1 trans-04">
+                      <a href="/blog/blog-slug" className="ltext-108 cl2 hov-cl1 trans-04">
                         5 Winter-to-Spring Fashion Trends to Try Now
                       </a>
                     </h4>
@@ -139,7 +139,7 @@ const BlogContainer = (props: any) => {
                             8 Comments
                           </span>
                         </span>
-                      <a href="blog-detail.html" className="stext-101 cl2 hov-cl1 trans-04 m-tb-10">
+                      <a href="/blog/blog-slug" className="stext-101 cl2 hov-cl1 trans-04 m-tb-10">
                         Continue Reading
                         <i className="fa fa-long-arrow-right m-l-9"/>
                       </a>
@@ -205,7 +205,7 @@ const BlogContainer = (props: any) => {
                   <ul>
                     <li className="flex-w flex-t p-b-30">
                       <a href="#" className="wrao-pic-w size-214 hov-ovelay1 m-r-20">
-                        <img src="images/product-min-01.jpg" alt="PRODUCT"/>
+                        <img src="/images/product-min-01.jpg" alt="PRODUCT"/>
                       </a>
                       <div className="size-215 flex-col-t p-t-8">
                         <a href="#" className="stext-116 cl8 hov-cl1 trans-04">
@@ -218,7 +218,7 @@ const BlogContainer = (props: any) => {
                     </li>
                     <li className="flex-w flex-t p-b-30">
                       <a href="#" className="wrao-pic-w size-214 hov-ovelay1 m-r-20">
-                        <img src="images/product-min-02.jpg" alt="PRODUCT"/>
+                        <img src="/images/product-min-02.jpg" alt="PRODUCT"/>
                       </a>
                       <div className="size-215 flex-col-t p-t-8">
                         <a href="#" className="stext-116 cl8 hov-cl1 trans-04">
@@ -231,7 +231,7 @@ const BlogContainer = (props: any) => {
                     </li>
                     <li className="flex-w flex-t p-b-30">
                       <a href="#" className="wrao-pic-w size-214 hov-ovelay1 m-r-20">
-                        <img src="images/product-min-03.jpg" alt="PRODUCT"/>
+                        <img src="/images/product-min-03.jpg" alt="PRODUCT"/>
                       </a>
                       <div className="size-215 flex-col-t p-t-8">
                         <a href="#" className="stext-116 cl8 hov-cl1 trans-04">
