@@ -1,6 +1,7 @@
 import React from 'react';
 
 const ContactContainer = (props: any) => {
+
   return (
     <React.Fragment>
       <section className="bg-img1 txt-center p-lr-15 p-tb-92" style={{backgroundImage: 'url("images/bg-01.jpg")'}}>
@@ -85,4 +86,4 @@ const ContactContainer = (props: any) => {
 };
 
 
-export default ContactContainer;
+export default (ContactContainer);

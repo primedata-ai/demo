@@ -5,6 +5,7 @@ import Header from "../components/containers/Header";
 import CartHeader from "../components/containers/CartHeader";
 import ContactContainer from "../components/containers/ContactContainer";
 
+
 const Contact: NextPage = () => {
 
   return (
@@ -117,7 +118,7 @@ const Contact: NextPage = () => {
         }
       </Script>
 
-      <Script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAKFWBqlKAGCeS1rMVoaNlwyayu0e0YRes" strategy="lazyOnload"></Script>
+      <Script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAKFWBqlKAGCeS1rMVoaNlwyayu0e0YRes" strategy="beforeInteractive"></Script>
       <Script src="/js/map-custom.js" strategy="afterInteractive"></Script>
       <Script async src="/js/main.js" strategy="afterInteractive"></Script>
     </React.Fragment>
