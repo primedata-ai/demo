@@ -13,7 +13,7 @@ const HomePageNew: NextPage = () => {
 
   return (
     <React.Fragment>
-      <Header className={"header-v3"}/>
+      <Header menuActive={"index"} className={"header-v3"}/>
       <Sidebar/>
       <CartHeader/>
 

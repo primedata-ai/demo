@@ -10,7 +10,7 @@ const Blog: NextPage = () => {
   return (
     <React.Fragment>
 
-      <Header className={"header-v4"}/>
+      <Header menuActive={"blog"} className={"header-v4"}/>
       <CartHeader/>
 
       <BlogContainer/>

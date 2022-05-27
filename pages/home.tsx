@@ -14,7 +14,7 @@ const HomePage: NextPage = () => {
 
   return (
     <React.Fragment>
-      <Header className={"header-v2"}/>
+      <Header menuActive={"index"} className={"header-v2"}/>
       <Sidebar/>
       <CartHeader/>
       <CollectionSlidesOverview/>

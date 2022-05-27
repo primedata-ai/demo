@@ -11,7 +11,7 @@ const Cart: NextPage = () => {
   return (
     <React.Fragment>
 
-      <Header className={"header-v4"}/>
+      <Header menuActive={"cart"} className={"header-v4"}/>
       <CartHeader/>
 
       <Breadcrumb/>

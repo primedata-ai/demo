@@ -1,3 +1,5 @@
+
+
 {
   "default": {
     "error": "Lỗi"
@@ -21,6 +23,7 @@
       "about": "Về chúng tôi",
       "blog": "Blog",
       "shop": "Mua sắm",
+      "cart": "Giỏ hàng",
       "features": "Tính năng",
       "your_cart": "Giỏ hàng của bạn",
       "total": "Tổng cộng",

@@ -23,7 +23,7 @@ const Home: NextPage = () => {
 
   return (
     <React.Fragment>
-      <Header/>
+      <Header menuActive={"index"}/>
       <CartHeader/>
       <CollectionSlidesOverview/>
 

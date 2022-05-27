@@ -11,7 +11,7 @@ const About: NextPage = () => {
   return (
     <React.Fragment>
 
-      <Header className={"header-v4"}/>
+      <Header menuActive={"about"} className={"header-v4"}/>
 
       <CartHeader/>
 

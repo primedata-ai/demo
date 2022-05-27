@@ -1,12 +1,63 @@
 import { useTranslation } from 'next-i18next';
 import Link from 'next/link';
-import { useRouter } from 'next/router';
-import React from 'react';
+import {useRouter} from 'next/router';
+import React, {useState} from 'react';
+import {IHeader, IMenuItem} from "../interface/IHeader";
 
-const Header = (props: any) => {
-  const { t } = useTranslation();
+const Header = (props: IHeader) => {
+  const {menuActive} = props;
+  const {t} = useTranslation();
   const router = useRouter();
-  const { pathname, query, asPath, locale } = router;
+  const {pathname, query, asPath, locale} = router;
+  const [menu,] = useState<IMenuItem[]>([
+    {
+      id: "index",
+      link: "/home",
+      name: "header.texts.home",
+      children: [
+        {
+          id: "home1",
+          link: "/",
+          name: "header.texts.home",
+        },
+        {
+          id: "home2",
+          link: "/home",
+          name: "header.texts.home",
+        },
+        {
+          id: "home3",
+          link: "/home-new",
+          name: "header.texts.home",
+        }
+      ]
+    },
+    {
+      id: "products",
+      link: "/products",
+      name: "header.texts.shop",
+    },
+    {
+      id: "cart",
+      link: "/cart",
+      name: "header.texts.cart",
+    },
+    {
+      id: "blog",
+      link: "/blog",
+      name: "header.texts.blog",
+    },
+    {
+      id: "about",
+      link: "/about",
+      name: "header.texts.about",
+    },
+    {
+      id: "contact",
+      link: "/contact",
+      name: "header.texts.contact",
+    },
+  ]);
 
   const switchLanguage = (nextLocale: string): void => {
     router.push({pathname, query}, asPath, {locale: nextLocale})
@@ -34,11 +85,11 @@ const Header = (props: any) => {
               </a>
               <a href="#" className="flex-c-m trans-04 p-lr-25 pos-relative lang-menu">
                 <span>{locale?.toUpperCase()}</span>
-                <ul className='menu-hover'>
-                  <li className='sub-menu-hover'>
+                <ul className="menu-hover">
+                  <li className="sub-menu-hover">
                     <span onClick={() => switchLanguage("vi")}>VI</span>
                   </li>
-                  <li className='sub-menu-hover'onClick={() => switchLanguage("en")}>EN</li>
+                  <li className="sub-menu-hover" onClick={() => switchLanguage("en")}>EN</li>
                 </ul>
               </a>
               <a href="#" className="flex-c-m trans-04 p-lr-25">
@@ -53,32 +104,32 @@ const Header = (props: any) => {
             <a href="#" className="logo">
               <img src="/images/icons/logo-01.png" alt="IMG-LOGO"/>
             </a>
+
             {/* Menu desktop */}
             <div className="menu-desktop">
               <ul className="main-menu">
-                <li className="active-menu">
-                  <a href="/">{t("header.texts.home")}</a>
-                  <ul className="sub-menu">
-                    <li><a href="/">{t("header.texts.home")} 1</a></li>
-                    <li><a href="/home">{t("header.texts.home")} 2</a></li>
-                    <li><a href="/home-new">{t("header.texts.home")} 3</a></li>
-                  </ul>
-                </li>
-                <li>
-                  <a href="/products">{t("header.texts.shop")}</a>
-                </li>
-                <li className="label1" data-label1="hot">
-                  <a href="/cart">{t("header.texts.features")}</a>
-                </li>
-                <li>
-                  <a href="/blog">{t("header.texts.blog")}</a>
-                </li>
-                <li>
-                  <a href="/about">{t("header.texts.about")}</a>
-                </li>
-                <li>
-                  <a href="/contact">{t("header.texts.contact")}</a>
-                </li>
+                {
+                  menu.map((menuItem: IMenuItem) => {
+                    return (
+                      <li key={menuItem.id} className={menuItem.id === menuActive ? "active-menu" : ""}>
+                        <a href={menuItem.link}>{t(menuItem.name)}</a>
+
+                        {(menuItem?.children) &&
+                          <ul className="sub-menu">
+                            {
+                              menuItem?.children?.map((child: IMenuItem) => {
+                                return (
+                                  <li key={child.id}><a href={child.link}>{t(child.name)}</a></li>
+                                )
+                              })
+                            }
+                          </ul>
+                        }
+
+                      </li>
+                    )
+                  })
+                }
               </ul>
             </div>
             {/* Icon header */}
@@ -151,32 +202,35 @@ const Header = (props: any) => {
           </li>
         </ul>
         <ul className="main-menu-m">
-          <li>
-            <a href="/">Home</a>
-            <ul className="sub-menu-m">
-              <li><a href="/">Homepage 1</a></li>
-              <li><a href="/home">Homepage 2</a></li>
-              <li><a href="/home-new">Homepage 3</a></li>
-            </ul>
-            <span className="arrow-main-menu-m">
-                <i className="fa fa-angle-right" aria-hidden="true"/>
-              </span>
-          </li>
-          <li>
-            <a href="/products">Shop</a>
-          </li>
-          <li>
-            <a href="/cart" className="label1 rs1" data-label1="hot">Features</a>
-          </li>
-          <li>
-            <a href="/blog">Blog</a>
-          </li>
-          <li>
-            <a href="/about">About</a>
-          </li>
-          <li>
-            <a href="/contact">Contact</a>
-          </li>
+
+          {
+            menu.map((menuItem: IMenuItem) => {
+              return (
+                <li key={menuItem.id}>
+                  <a href={menuItem.link}>{t(menuItem.name)}</a>
+
+                  {(menuItem?.children) &&
+                    <ul className="sub-menu-m">
+                      {
+                        menuItem?.children?.map((child: IMenuItem) => {
+                          return (
+                            <li key={child.id}><a href={child.link}>{t(child.name)}</a></li>
+                          )
+                        })
+                      }
+                    </ul>
+                  }
+
+                  {(menuItem?.children) && (
+                    <span className="arrow-main-menu-m">
+                      <i className="fa fa-angle-right" aria-hidden="true"/>
+                    </span>
+                  )}
+
+                </li>
+              )
+            })
+          }
         </ul>
       </div>
       {/* Modal Search */}

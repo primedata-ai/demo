@@ -37,7 +37,7 @@ const ProductDetail: NextPage = () => {
       <Script src="/vendor/daterangepicker/daterangepicker.js" strategy="beforeInteractive"></Script>
       <Script async src="/js/slick-custom.js" strategy="afterInteractive"></Script>
 
-      <Header className={"header-v4"}/>
+      <Header menuActive={"products"} className={"header-v4"}/>
       <CartHeader/>
 
       <Breadcrumb/>
