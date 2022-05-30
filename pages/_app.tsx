@@ -19,6 +19,10 @@ import "../public/css/util.css";
 import "../public/css/main.css";
 
 import type {AppProps} from "next/app";
+
+import { appWithTranslation } from "next-i18next";
+import Nexti18nConfig from '../next-i18next.config'
+
 import React from "react";
 import Footer from "components/containers/Footer";
 
@@ -31,4 +35,4 @@ function MyApp({Component, pageProps}: AppProps) {
   );
 }
 
-export default MyApp;
+export default appWithTranslation(MyApp, Nexti18nConfig);

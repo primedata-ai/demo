@@ -6,6 +6,18 @@ import Header from "../../components/containers/Header";
 import CardHeader from "../../components/containers/CardHeader";
 import Breadcrumb from "../../components/containers/Breadcrumb";
 import ProductDetailSection from "../../components/containers/ProductDetailSection";
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
+
+export async function getServerSideProps({ locale } : {locale: string}) {
+  
+  return {
+    props: {
+      ...(await serverSideTranslations(locale, ['common'])),
+      // Will be passed to the page component as props
+    },
+  };
+}
+
 
 const ProductDetail: NextPage = () => {
 

@@ -1,4 +1,4 @@
-import useTranslation from 'locales/useTranslation';
+import { useTranslation } from 'next-i18next';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import React from 'react';

@@ -1,4 +1,4 @@
-import useTranslation from 'locales/useTranslation';
+import { useTranslation } from 'next-i18next';
 import React from 'react';
 
 const CollectionSlidesOverview = (props: any) => {

@@ -1,5 +1,5 @@
 import React from 'react';
-import useTranslation from "../../locales/useTranslation";
+import { useTranslation } from 'next-i18next';
 
 const CardHeader = (props: any) => {
   const {t} = useTranslation()
