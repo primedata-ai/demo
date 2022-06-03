@@ -1,6 +1,10 @@
-import React from 'react';
+import React, {useEffect} from 'react';
+import {view_cart} from "../../lib/track";
 
 const CartContainer = (props:any) => {
+  useEffect(() => {
+    view_cart();
+  }, [])
   return (
     <form className="bg0 p-t-75 p-b-85">
       <div className="container">

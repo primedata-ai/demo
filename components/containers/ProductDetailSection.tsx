@@ -1,6 +1,10 @@
-import React from 'react';
+import React, {useEffect} from 'react';
+import {add_to_cart, view_product_details} from "../../lib/track";
 
 const ProductDetailSection = (props: any) => {
+  useEffect(() => {
+    view_product_details()
+  }, [])
   return (
     <React.Fragment>
       <section className="sec-product-detail bg0 p-t-65 p-b-60">
@@ -98,7 +102,9 @@ const ProductDetailSection = (props: any) => {
                           <i className="fs-16 zmdi zmdi-plus" />
                         </div>
                       </div>
-                      <button className="flex-c-m stext-101 cl0 size-101 bg1 bor1 hov-btn1 p-lr-15 trans-04 js-addcart-detail">
+                      <button
+                        onClick={() => add_to_cart()}
+                        className="flex-c-m stext-101 cl0 size-101 bg1 bor1 hov-btn1 p-lr-15 trans-04 js-addcart-detail">
                         Add to cart
                       </button>
                     </div>

@@ -1,6 +1,10 @@
-import React from 'react';
+import React, {useEffect} from 'react';
+import {add_to_cart, view_product_details} from "../../lib/track";
 
 const ProductDetailPopup = (props: any) => {
+  useEffect(() => {
+    view_product_details()
+  }, [])
   return (
     <div className="wrap-modal1 js-modal1 p-t-60 p-b-20">
       <div className="overlay-modal1 js-hide-modal1"/>
@@ -107,6 +111,7 @@ const ProductDetailPopup = (props: any) => {
                         </div>
                       </div>
                       <button
+                        onClick={() => add_to_cart()}
                         className="flex-c-m stext-101 cl0 size-101 bg1 bor1 hov-btn1 p-lr-15 trans-04 js-addcart-detail">
                         Add to cart
                       </button>
