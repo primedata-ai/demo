@@ -1,6 +1,5 @@
 import Document, {Html, Head, Main, NextScript, DocumentContext} from 'next/document'
 import React from "react";
-import Script from "next/script";
 
 class DocumentApp extends Document {
   static async getInitialProps(ctx: DocumentContext) {
@@ -15,7 +14,7 @@ class DocumentApp extends Document {
           <meta charSet="UTF-8"/>
           <meta name="viewport" content="width=device-width, initial-scale=1"/>
           <link rel="icon" href="https://dev.primedata.ai/primedata_logo.png"/>
-
+          <script src={"/prime-sdk.js"} async={true}/>
         </Head>
 
         <body className={"animsition"}>
