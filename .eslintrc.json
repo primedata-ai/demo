@@ -1,3 +1,19 @@
 {
-  "extends": "next/core-web-vitals"
+  "extends": [
+    "next",
+    "next/core-web-vitals"
+  ],
+  "settings": {
+    "next": {
+      "rootDir": "./"
+    }
+  },
+  "rules": {
+    "@next/next/no-img-element": "off",
+    "@next/next/no-html-link-for-pages": "off",
+    "@next/next/no-sync-scripts": "off",
+    "@next/next/no-head-element": "off",
+    "@next/next/no-title-in-document-head": "off",
+    "@next/next/inline-script-id": "off"
+  }
 }

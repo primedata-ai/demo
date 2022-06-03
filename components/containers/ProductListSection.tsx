@@ -1,7 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import {IProductListSection} from "../interface/IProductListSection";
 import {IProduct} from "../interface/IProduct";
-import Link from "next/link";
 
 const ProductListSection = (props: IProductListSection) => {
   const {hasTitle, isProductPage} = props;
@@ -236,7 +235,7 @@ const ProductListSection = (props: IProductListSection) => {
                 <div key={prod.id} className={`col-sm-6 col-md-4 col-lg-3 p-b-35 isotope-item women`}>
                   <div className="block2">
                     <div className="block2-pic hov-img0">
-                      <img src={`${prod.image}`} alt="IMG-PRODUCT"/>
+                      <img src={`${prod.image}`} alt={"Hình ảnh của sản phẩm tên: " + prod.name}/>
                       <a href="#"
                          className="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04 js-show-modal1">
                         Quick View
@@ -265,90 +264,9 @@ const ProductListSection = (props: IProductListSection) => {
               )
             })
           }
-          <div className="col-sm-6 col-md-4 col-lg-3 p-b-35 isotope-item shoes">
-            <div className="block2">
-              <div className="block2-pic hov-img0">
-                <img src="/images/product-09.jpg" alt="IMG-PRODUCT"/>
-                <a href="#"
-                   className="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04 js-show-modal1">
-                  Quick View
-                </a>
-              </div>
-              <div className="block2-txt flex-w flex-t p-t-14">
-                <div className="block2-txt-child1 flex-col-l ">
-                  <a href="/product-detail.html" className="stext-104 cl4 hov-cl1 trans-04 js-name-b2 p-b-6">
-                    Converse All Star Hi Plimsolls
-                  </a>
-                  <span className="stext-105 cl3">
-                      $75.00
-                    </span>
-                </div>
-                <div className="block2-txt-child2 flex-r p-t-3">
-                  <a href="#" className="btn-addwish-b2 dis-block pos-relative js-addwish-b2">
-                    <img className="icon-heart1 dis-block trans-04" src="/images/icons/icon-heart-01.png" alt="ICON"/>
-                    <img className="icon-heart2 dis-block trans-04 ab-t-l" src="/images/icons/icon-heart-02.png"
-                         alt="ICON"/>
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className="col-sm-6 col-md-4 col-lg-3 p-b-35 isotope-item men">
-            <div className="block2">
-              <div className="block2-pic hov-img0">
-                <img src="/images/product-12.jpg" alt="IMG-PRODUCT"/>
-                <a href="#"
-                   className="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04 js-show-modal1">
-                  Quick View
-                </a>
-              </div>
-              <div className="block2-txt flex-w flex-t p-t-14">
-                <div className="block2-txt-child1 flex-col-l ">
-                  <a href="/product-detail.html" className="stext-104 cl4 hov-cl1 trans-04 js-name-b2 p-b-6">
-                    Herschel supply
-                  </a>
-                  <span className="stext-105 cl3">
-                      $63.15
-                    </span>
-                </div>
-                <div className="block2-txt-child2 flex-r p-t-3">
-                  <a href="#" className="btn-addwish-b2 dis-block pos-relative js-addwish-b2">
-                    <img className="icon-heart1 dis-block trans-04" src="/images/icons/icon-heart-01.png" alt="ICON"/>
-                    <img className="icon-heart2 dis-block trans-04 ab-t-l" src="/images/icons/icon-heart-02.png"
-                         alt="ICON"/>
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className="col-sm-6 col-md-4 col-lg-3 p-b-35 isotope-item watches">
-            <div className="block2">
-              <div className="block2-pic hov-img0">
-                <img src="/images/product-15.jpg" alt="IMG-PRODUCT"/>
-                <a href="#"
-                   className="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04 js-show-modal1">
-                  Quick View
-                </a>
-              </div>
-              <div className="block2-txt flex-w flex-t p-t-14">
-                <div className="block2-txt-child1 flex-col-l ">
-                  <a href="/product-detail.html" className="stext-104 cl4 hov-cl1 trans-04 js-name-b2 p-b-6">
-                    Mini Silver Mesh Watch
-                  </a>
-                  <span className="stext-105 cl3">
-                      $86.85
-                    </span>
-                </div>
-                <div className="block2-txt-child2 flex-r p-t-3">
-                  <a href="#" className="btn-addwish-b2 dis-block pos-relative js-addwish-b2">
-                    <img className="icon-heart1 dis-block trans-04" src="/images/icons/icon-heart-01.png" alt="ICON"/>
-                    <img className="icon-heart2 dis-block trans-04 ab-t-l" src="/images/icons/icon-heart-02.png"
-                         alt="ICON"/>
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div>
+
+
+
 
         </div>
         <div className="flex-c-m flex-w w-full p-t-45">

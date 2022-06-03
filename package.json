@@ -6,12 +6,19 @@
     "dev": "next dev -p 1070",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint --no-cache",
+    "predeploy": "npm run build",
+    "export": "next export",
+    "deploy": "gh-pages -b gh-pages -d build"
   },
   "dependencies": {
+    "gh-pages": "^4.0.0",
     "jQuery": "^1.7.4",
     "next": "12.1.6",
+    "next-compose-plugins": "^2.2.1",
     "next-i18next": "^11.0.0",
+    "next-remove-imports": "^1.0.6",
+    "next-transpile-modules": "^9.0.0",
     "react": "18.1.0",
     "react-dom": "18.1.0",
     "styled-components": "^5.3.5"
