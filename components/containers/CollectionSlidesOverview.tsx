@@ -21,7 +21,7 @@ const CollectionSlidesOverview = (props: any) => {
                   </h2>
                 </div>
                 <div className="layer-slick1 animated visible-false" data-appear="zoomIn" data-delay={1600}>
-                  <a href="/product.html"
+                  <a href="/products"
                      className="flex-c-m stext-101 cl0 size-101 bg1 bor1 hov-btn1 p-lr-15 trans-04">
                     {t("common.shop_now")}
                   </a>
@@ -43,7 +43,7 @@ const CollectionSlidesOverview = (props: any) => {
                   </h2>
                 </div>
                 <div className="layer-slick1 animated visible-false" data-appear="slideInUp" data-delay={1600}>
-                  <a href="/product.html"
+                  <a href="/products"
                      className="flex-c-m stext-101 cl0 size-101 bg1 bor1 hov-btn1 p-lr-15 trans-04">
                     {t("common.shop_now")}
                   </a>
@@ -65,7 +65,7 @@ const CollectionSlidesOverview = (props: any) => {
                   </h2>
                 </div>
                 <div className="layer-slick1 animated visible-false" data-appear="rotateIn" data-delay={1600}>
-                  <a href="/product.html"
+                  <a href="/products"
                      className="flex-c-m stext-101 cl0 size-101 bg1 bor1 hov-btn1 p-lr-15 trans-04">
                     {t("common.shop_now")}
                   </a>

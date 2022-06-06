@@ -9,6 +9,16 @@ import Header from "../components/containers/Header";
 import Script from "next/script";
 import Sidebar from "../components/containers/Sidebar";
 import BlogSliderContainer from "../components/containers/BlogSliderContainer";
+import { serverSideTranslations } from "next-i18next/serverSideTranslations";
+
+export async function getStaticProps({ locale } : {locale: string}) {
+  return {
+    props: {
+      ...(await serverSideTranslations(locale, ['common'])),
+      // Will be passed to the page component as props
+    },
+  };
+}
 
 const HomePage: NextPage = () => {
 

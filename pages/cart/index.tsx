@@ -5,6 +5,16 @@ import Header from "../../components/containers/Header";
 import CartHeader from "../../components/containers/CartHeader";
 import Breadcrumb from "../../components/containers/Breadcrumb";
 import CartContainer from "../../components/containers/CartContainer";
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
+
+export async function getStaticProps({ locale } : {locale: string}) {
+  return {
+    props: {
+      ...(await serverSideTranslations(locale, ['common'])),
+      // Will be passed to the page component as props
+    },
+  };
+}
 
 const Cart: NextPage = () => {
 
@@ -34,6 +44,18 @@ const Cart: NextPage = () => {
 
       <Script async strategy="afterInteractive">{`$('.parallax100').parallax100();`}</Script>
 
+
+      <Script strategy="afterInteractive" type="text/javascript">{
+        `
+            $(".js-select2").each(function(){
+              $(this).select2({
+                minimumResultsForSearch: 20,
+                dropdownParent: $(this).next('.dropDownSelect2')
+              });
+          })`
+      }</Script>
+
+      
       <Script async strategy="afterInteractive">
         {
           `

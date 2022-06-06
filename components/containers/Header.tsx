@@ -1,5 +1,4 @@
 import { useTranslation } from 'next-i18next';
-import Link from 'next/link';
 import {useRouter} from 'next/router';
 import React, {useState} from 'react';
 import {IHeader, IMenuItem} from "../interface/IHeader";
@@ -101,7 +100,7 @@ const Header = (props: IHeader) => {
         <div className="wrap-menu-desktop">
           <nav className="limiter-menu-desktop container">
             {/* Logo desktop */}
-            <a href="#" className="logo">
+            <a href="/" className="logo">
               <img src="/images/icons/logo-01.png" alt="IMG-LOGO"/>
             </a>
 

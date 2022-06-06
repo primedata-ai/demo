@@ -52,6 +52,16 @@ const Products: NextPage = () => {
 
       <Script async strategy="afterInteractive">{`$('.parallax100').parallax100();`}</Script>
 
+      <Script strategy="afterInteractive" type="text/javascript">{
+        `
+            $(".js-select2").each(function(){
+              $(this).select2({
+                minimumResultsForSearch: 20,
+                dropdownParent: $(this).next('.dropDownSelect2')
+              });
+          })`
+      }</Script>
+
       <Script async strategy="afterInteractive">
         {
           `
