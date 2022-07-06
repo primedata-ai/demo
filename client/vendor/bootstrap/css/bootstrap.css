@@ -119,8 +119,6 @@ p {
 abbr[title],
 abbr[data-original-title] {
   text-decoration: underline;
-  -webkit-text-decoration: underline dotted;
-          text-decoration: underline dotted;
   cursor: help;
   border-bottom: 0;
 }
@@ -629,7 +627,6 @@ pre code {
 }
 
 .container-fluid {
-  width: 100%;
   margin-right: auto;
   margin-left: auto;
   padding-right: 15px;

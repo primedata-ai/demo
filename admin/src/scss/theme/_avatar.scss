@@ -7,7 +7,6 @@
   display: inline-block;
   vertical-align: middle;
   .avatar-name {
-    background-color: map-get($theme-colors-light, 'primary');
     position: absolute;
     text-align: center;
     color: $primary;
