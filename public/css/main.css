@@ -93,7 +93,7 @@ Input, textarea : 14px/1.6 '', Arial, sans-serif;
 }
 
 @font-face {
-  font-family: Montserrat-Bold;
+  font-family: Montserrat-Bold, serif, sans-serif;
   src: url('../fonts/Montserrat/Montserrat-Bold.ttf');
 }
 
@@ -2242,7 +2242,7 @@ input.num-product::-webkit-inner-spin-button {
 
 /*---------------------------------------------*/
 .stext-301 {
-  font-family: Montserrat-Bold;
+  font-family: Montserrat-Bold, serif, sans-serif;
   font-size: 15px;
   line-height: 1.6;
   text-transform: uppercase;
