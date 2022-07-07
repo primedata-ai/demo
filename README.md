@@ -1,3 +1,17 @@
+# Prime Data - Demo site
+
+> Prime Data - Client Site and Server Site demo PrimeData CDP feature
+
+[![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
+[![Build Status](https://img.shields.io/travis/unshiftio/url-parse/master.svg?style=flat-square)](https://travis-ci.org/unshiftio/url-parse)
+[![Security Rating](https://sonar.primedata.ai/api/project_badges/measure?project=Prime-Demo-Site&metric=security_rating&token=4c36acb202f71ac8c34f548fa80e3c6334dc0ca0)](https://sonar.primedata.ai/dashboard?id=Prime-Demo-Site)
+[![Bugs](https://sonar.primedata.ai/api/project_badges/measure?project=Prime-Demo-Site&metric=bugs&token=4c36acb202f71ac8c34f548fa80e3c6334dc0ca0)](https://sonar.primedata.ai/dashboard?id=Prime-Demo-Site)
+[![Lines of Code](https://sonar.primedata.ai/api/project_badges/measure?project=Prime-Demo-Site&metric=ncloc&token=4c36acb202f71ac8c34f548fa80e3c6334dc0ca0)](https://sonar.primedata.ai/dashboard?id=Prime-Demo-Site)
+[![Coverage](https://sonar.primedata.ai/api/project_badges/measure?project=Prime-Demo-Site&metric=coverage&token=4c36acb202f71ac8c34f548fa80e3c6334dc0ca0)](https://sonar.primedata.ai/dashboard?id=Prime-Demo-Site)
+[![Code Smells](https://sonar.primedata.ai/api/project_badges/measure?project=Prime-Demo-Site&metric=code_smells&token=4c36acb202f71ac8c34f548fa80e3c6334dc0ca0)](https://sonar.primedata.ai/dashboard?id=Prime-Demo-Site)
+[![Quality Gate Status](https://sonar.primedata.ai/api/project_badges/measure?project=Prime-Demo-Site&metric=alert_status&token=4c36acb202f71ac8c34f548fa80e3c6334dc0ca0)](https://sonar.primedata.ai/dashboard?id=Prime-Demo-Site)
+
+
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
 ## Getting Started
