@@ -12,10 +12,11 @@
     "deploy": "gh-pages -b gh-pages -d build"
   },
   "dependencies": {
+    "@next/bundle-analyzer": "^12.2.2",
     "axios": "^0.27.2",
     "gh-pages": "^4.0.0",
     "jQuery": "^1.7.4",
-    "next": "12.1.6",
+    "next": "latest",
     "next-compose-plugins": "^2.2.1",
     "next-i18next": "^11.0.0",
     "next-remove-imports": "^1.0.6",
