@@ -4,6 +4,7 @@ import {IProduct} from "../interface/IProduct";
 import {useQuery} from "react-query";
 import {getProducts} from "services/ProductService";
 import {PLoading} from "components/elements/PLoading";
+import {formatNumber} from "services/utils/FormatUtils";
 
 const ProductListSection = (props: IProductListSection) => {
   const {hasTitle, isProductPage} = props;
@@ -237,7 +238,7 @@ const ProductListSection = (props: IProductListSection) => {
                           {prod.name}
                         </a>
                         <span className="stext-105 cl3">
-                      {prod.price}
+                      {formatNumber(prod.price)} VND
                     </span>
                       </div>
                       <div className="block2-txt-child2 flex-r p-t-3">

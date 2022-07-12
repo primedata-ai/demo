@@ -11,8 +11,8 @@ const CartContainer = (props: any) => {
     cart && view_cart(cart.data);
   }, [cart])
 
-
   if(isLoading) return <PLoading/>
+
   return (
     <form className="bg0 p-t-75 p-b-85">
       <div className="container">
