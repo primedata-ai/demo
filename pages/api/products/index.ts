@@ -1,4 +1,4 @@
-import {NextApiRequest, NextApiResponse} from "next";
+import type {NextApiRequest, NextApiResponse} from "next";
 import {IProduct} from "components/interface/IProduct";
 
 export default function handler(_req: NextApiRequest, res: NextApiResponse<IProduct[]>) {
