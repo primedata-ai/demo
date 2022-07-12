@@ -5,14 +5,11 @@ import {getProductById} from "services/ProductService";
 import {PLoading} from "components/elements/PLoading";
 
 const ProductDetailSection = (props: any) => {
-  const {data: product, isLoading} = useQuery(
-    ["getProductDetailById"],
-    () => getProductById(props.slug),
-  );
+  const {data: product, isLoading} = useQuery(["getProductDetailById"], () => getProductById(props.slug));
 
   useEffect(() => {
     product && view_product_details(product.data)
-  }, [])
+  }, [product])
 
   if(isLoading) return <PLoading/>
   return (
