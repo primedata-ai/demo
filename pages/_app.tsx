@@ -18,6 +18,8 @@ import "../public/vendor/perfect-scrollbar/perfect-scrollbar.css";
 import "../public/css/util.css";
 import "../public/css/main.css";
 
+import "../styles/p-loading.style.css";
+
 import type {AppProps} from "next/app";
 
 import React from "react";

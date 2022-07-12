@@ -1,31 +1,15 @@
-import React, {useEffect, useState} from 'react';
+import React from 'react';
 import {IProductListSection} from "../interface/IProductListSection";
 import {IProduct} from "../interface/IProduct";
 import {useQuery} from "react-query";
 import {getProducts} from "services/ProductService";
+import {PLoading} from "components/elements/PLoading";
 
 const ProductListSection = (props: IProductListSection) => {
   const {hasTitle, isProductPage} = props;
-  const [products, setProducts] = useState<IProduct[]>([]);
-  const {isSuccess, data: prods, isLoading, isError} = useQuery(
-    ["getProducts"],
-    getProducts,
-  );
-  console.log('log::15 ProductListSection', isSuccess, isLoading, isError, prods)
-  useEffect(() => {
-    let listOfProd: IProduct[] = []
-    for (let i = 1; i < 17; i++) {
-      listOfProd.push({
-        id: `${i}`,
-        slug: `prod-slug-${i}`,
-        image: i < 10 ? `/images/product-0${i}.jpg` : `/images/product-${i}.jpg`,
-        name: "Esprit Ruffle Shirt" || "",
-        price: 30000000,
-        category: "women" || "men" || "shoes" || "watches"
-      })
-    }
-    setProducts(listOfProd)
-  }, [])
+  const {data: products, isLoading} = useQuery(["getProducts"], getProducts);
+
+  if(isLoading) return <PLoading />
 
   return (
     <section className={`bg0 ${isProductPage ? 'm-t-23' : 'p-t-23 '}  p-b-140`}>
@@ -236,7 +220,7 @@ const ProductListSection = (props: IProductListSection) => {
         </div>
         <div className="row isotope-grid">
           {
-            products.map((prod: IProduct) => {
+            products && products.data.map((prod: IProduct) => {
               return (
                 <div key={prod.id} className={`col-sm-6 col-md-4 col-lg-3 p-b-35 isotope-item women`}>
                   <div className="block2">

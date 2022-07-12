@@ -2,18 +2,19 @@ import React, {useEffect} from 'react';
 import {add_to_cart, view_product_details} from "lib/track";
 import {useQuery} from "react-query";
 import {getProductById} from "services/ProductService";
+import {PLoading} from "components/elements/PLoading";
 
 const ProductDetailSection = (props: any) => {
-  const {isSuccess, data: prods, isLoading, isError} = useQuery(
+  const {data: product, isLoading} = useQuery(
     ["getProductDetailById"],
     () => getProductById(props.slug),
   );
-  console.log('log::15 ProductListSection', isSuccess, isLoading, isError, prods)
 
   useEffect(() => {
-    view_product_details()
+    product && view_product_details(product.data)
   }, [])
 
+  if(isLoading) return <PLoading/>
   return (
     <React.Fragment>
       <section className="sec-product-detail bg0 p-t-65 p-b-60">
