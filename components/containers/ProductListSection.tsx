@@ -1,11 +1,17 @@
 import React, {useEffect, useState} from 'react';
 import {IProductListSection} from "../interface/IProductListSection";
 import {IProduct} from "../interface/IProduct";
+import {useQuery} from "react-query";
+import {getProducts} from "services/ProductService";
 
 const ProductListSection = (props: IProductListSection) => {
   const {hasTitle, isProductPage} = props;
   const [products, setProducts] = useState<IProduct[]>([]);
-
+  const {isSuccess, data: prods, isLoading, isError} = useQuery(
+    ["getProducts"],
+    getProducts,
+  );
+  console.log('log::15 ProductListSection', isSuccess, isLoading, isError, prods)
   useEffect(() => {
     let listOfProd: IProduct[] = []
     for (let i = 1; i < 17; i++) {
@@ -264,8 +270,6 @@ const ProductListSection = (props: IProductListSection) => {
               )
             })
           }
-
-
 
 
         </div>

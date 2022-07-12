@@ -7,9 +7,10 @@ import CartHeader from "../../components/containers/CartHeader";
 import Breadcrumb from "../../components/containers/Breadcrumb";
 import ProductDetailSection from "../../components/containers/ProductDetailSection";
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
+import {useRouter} from "next/router";
 
 export async function getServerSideProps({ locale } : {locale: string}) {
-  
+
   return {
     props: {
       ...(await serverSideTranslations(locale, ['common'])),
@@ -20,6 +21,8 @@ export async function getServerSideProps({ locale } : {locale: string}) {
 
 
 const ProductDetail: NextPage = () => {
+  const router = useRouter()
+  const { slug } = router.query
 
   return (
     <React.Fragment>
@@ -42,7 +45,7 @@ const ProductDetail: NextPage = () => {
 
       <Breadcrumb/>
 
-      <ProductDetailSection/>
+      <ProductDetailSection slug={slug}/>
 
       <Script strategy="afterInteractive" type="text/javascript">{
         `

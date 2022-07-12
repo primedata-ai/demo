@@ -1,10 +1,19 @@
 import React, {useEffect} from 'react';
-import {add_to_cart, view_product_details} from "../../lib/track";
+import {add_to_cart, view_product_details} from "lib/track";
+import {useQuery} from "react-query";
+import {getProductById} from "services/ProductService";
 
 const ProductDetailSection = (props: any) => {
+  const {isSuccess, data: prods, isLoading, isError} = useQuery(
+    ["getProductDetailById"],
+    () => getProductById(props.slug),
+  );
+  console.log('log::15 ProductListSection', isSuccess, isLoading, isError, prods)
+
   useEffect(() => {
     view_product_details()
   }, [])
+
   return (
     <React.Fragment>
       <section className="sec-product-detail bg0 p-t-65 p-b-60">

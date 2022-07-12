@@ -20,17 +20,24 @@ import "../public/css/main.css";
 
 import type {AppProps} from "next/app";
 
-import { appWithTranslation } from "next-i18next";
-import Nexti18nConfig from '../next-i18next.config'
-
 import React from "react";
 import Footer from "components/containers/Footer";
+import {appWithTranslation} from "next-i18next";
+import Nexti18nConfig from '../next-i18next.config'
+import {QueryClient, QueryClientProvider, Hydrate} from "react-query";
+import {ReactQueryDevtools} from "react-query/devtools";
 
 function MyApp({Component, pageProps}: AppProps) {
+  const [queryClient] = React.useState(() => new QueryClient());
   return (
     <React.Fragment>
-      <Component {...pageProps} />
-      <Footer/>
+      <QueryClientProvider client={queryClient}>
+        <Hydrate state={pageProps.dehydratedState}>
+          <Component {...pageProps} />
+          <Footer/>
+          <ReactQueryDevtools initialIsOpen={false}/>
+        </Hydrate>
+      </QueryClientProvider>
     </React.Fragment>
   );
 }

@@ -16,13 +16,13 @@ export const identify = (user: any) => {
 };
 
 export const page_view = () => {
-  let desc = document.head.querySelector("meta[name=description]");
+  let desc = document.head.querySelector("meta[name=description]") || "Not found description";
 
   const data = {
     route: window.location.href,
     title: window.document.title,
     // @ts-ignore
-    description: desc ? desc?.content : "Not found description",
+    description: desc,
     referrer: window.document.referrer,
   };
 
