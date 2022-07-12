@@ -7,6 +7,7 @@ import SocialNetwork from "components/containers/SocialNetwork";
 import RelatedProducts from "components/containers/RelatedProducts";
 import ProductInformation from "components/containers/ProductInformation";
 import {formatNumber} from "services/utils/FormatUtils";
+import {addToCart} from "services/CartService";
 
 const ProductDetailSection = (props: any) => {
   const {data: product, isLoading} = useQuery(["getProductDetailById"], () => getProductById(props.slug));
@@ -19,7 +20,7 @@ const ProductDetailSection = (props: any) => {
 
 
   const addProductToCart = () => {
-    console.log('log::15 addProductToCart', product?.data)
+    addToCart(product?.data)
     add_to_cart( product?.data)
   }
 

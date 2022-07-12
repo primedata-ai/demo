@@ -1,0 +1,28 @@
+[
+    {
+        "id": "admin",
+        "products": [
+            {
+                "id": "1",
+                "slug": "Alpha",
+                "image": "/images/product-01.jpg",
+                "name": "Esprit Ruffle Shirt",
+                "price": 30000000,
+                "category": "women",
+                "quantity": 1,
+                "total": 30000000
+            },
+            {
+                "id": "1",
+                "slug": "Alpha",
+                "image": "/images/product-01.jpg",
+                "name": "Esprit Ruffle Shirt",
+                "price": 30000000,
+                "category": "women",
+                "quantity": 1,
+                "total": 30000000
+            }
+        ],
+        "total": 60000000
+    }
+]

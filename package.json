@@ -13,6 +13,7 @@
   },
   "dependencies": {
     "@next/bundle-analyzer": "^12.2.2",
+    "@types/uuid": "^8.3.4",
     "axios": "^0.27.2",
     "gh-pages": "^4.0.0",
     "jQuery": "^1.7.4",
@@ -24,7 +25,8 @@
     "react": "18.1.0",
     "react-dom": "18.1.0",
     "react-query": "^3.39.1",
-    "styled-components": "^5.3.5"
+    "styled-components": "^5.3.5",
+    "uuid": "^8.3.2"
   },
   "devDependencies": {
     "@types/node": "17.0.31",
