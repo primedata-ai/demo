@@ -2,6 +2,7 @@ import React, {FormEvent} from 'react';
 import {onSignup} from "services/UserService";
 import {useRouter} from 'next/router'
 import {showNotify} from "lib/notification";
+import {identify} from "lib/track";
 
 const RegisterContainer = () => {
   const router = useRouter()
@@ -31,6 +32,7 @@ const RegisterContainer = () => {
       localStorage.setItem('user', JSON.stringify(user));
       localStorage.setItem('email', user.email);
       localStorage.setItem('token', user.token);
+      identify(user)
       router.push("/").then(() => router.reload())
     })
   }

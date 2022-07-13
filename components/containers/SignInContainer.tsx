@@ -2,6 +2,7 @@ import React from 'react';
 import {onLogin} from "services/UserService";
 import { useRouter } from 'next/router'
 import {showNotify} from "lib/notification";
+import {identify} from "lib/track";
 
 const SignInContainer = () => {
   const router = useRouter()
@@ -18,6 +19,7 @@ const SignInContainer = () => {
       localStorage.setItem('user', JSON.stringify(user));
       localStorage.setItem('email', user.email);
       localStorage.setItem('token', user.token);
+      identify(user)
       router.push("/").then(() => router.reload())
     })
   }
