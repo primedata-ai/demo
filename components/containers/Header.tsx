@@ -56,6 +56,7 @@ const Header = (props: IHeader) => {
       link: "/contact",
       name: "header.texts.contact",
     },
+
   ]);
 
   const switchLanguage = (nextLocale: string): void => {

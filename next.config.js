@@ -26,7 +26,13 @@ const nextConfig = {
     // domains: ['http://localhost:1070'],
   },
   output: "standalone",
-  outputFileTracingRoot: path.join(__dirname, "../../")
+  outputFileTracingRoot: path.join(__dirname, "../../"),
+  serverRuntimeConfig: {
+    secret: 'ppd-config'
+  },
+  publicRuntimeConfig: {
+    // apiUrl: process.env.NODE_ENV === 'development' ? 'http://localhost:1002/api' : 'http://localhost:1002/api'
+  }
 };
 
 module.exports = withPlugins([withBundleAnalyzer, withTM], removeImports(nextConfig));

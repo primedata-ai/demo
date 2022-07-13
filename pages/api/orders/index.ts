@@ -1,5 +1,8 @@
 import type {NextApiRequest, NextApiResponse} from "next";
+import {apiHandler} from "lib/api-handler";
 
-export default function handler(_req: NextApiRequest, res: NextApiResponse<[]>) {
+function handler(_req: NextApiRequest, res: NextApiResponse<[]>) {
   res.status(200).json([]);
 }
+
+export default apiHandler(handler);
