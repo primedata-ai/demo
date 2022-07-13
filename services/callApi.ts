@@ -1,4 +1,5 @@
 import axios, {CancelTokenSource} from "axios";
+import {getTokenAuthCurrent} from "services/UserService";
 
 export const header = {
   Accept: "application/json",
@@ -8,7 +9,7 @@ export const header = {
 };
 
 export const callApi = (endpoint: string, method: string, body: any, cancelTokenSource: CancelTokenSource | null) => {
-  let access_token: string | null = localStorage.getItem("X-Auth-Token");
+  let access_token: string | null = getTokenAuthCurrent();
   return axios({
     url: window.location.origin + `/api/${endpoint}`,
     method: method ? method : "GET",

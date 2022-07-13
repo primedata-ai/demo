@@ -17,6 +17,7 @@
     "axios": "^0.27.2",
     "gh-pages": "^4.0.0",
     "jQuery": "^1.7.4",
+    "moment": "^2.29.4",
     "next": "latest",
     "next-compose-plugins": "^2.2.1",
     "next-i18next": "^11.0.0",

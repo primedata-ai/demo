@@ -1,0 +1,23 @@
+[
+    {
+        "email": "nguyenlephong1997@gmail.com",
+        "content": "document.getElementById(\"email_contact\").text",
+        "user_id": "admin@primedata.ai",
+        "id": "436cc031-d5cd-4073-9b0a-d586174a260f",
+        "created_at": 1657696864
+    },
+    {
+        "email": "nguyenlephong1997@gmail.com",
+        "content": "document.getElementById(\"email_contact\").text",
+        "user_id": "admin@primedata.ai",
+        "id": "7669c117-b38a-40e7-aaac-f6e34ae90b10",
+        "created_at": 1657698149
+    },
+    {
+        "email": "nguyenlephong@primedata.ai",
+        "content": "We will get back to you soon",
+        "user_id": "admin@primedata.ai",
+        "id": "a612f33b-42a5-460f-9e99-0bc35bafad36",
+        "created_at": 1657698188
+    }
+]

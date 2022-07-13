@@ -41,21 +41,43 @@ export const button_click = (properties: any) => {
 };
 
 export const add_to_cart = (props?: any) => {
-  tracker.track("demo-add-to-cart", props);
+  tracker.track("demo-add-to-cart", {
+    properties: {...props}
+  });
 }
 
 export const checkout = (props?: any) => {
-  tracker.track("demo-check-out", props);
+  tracker.track("demo-check-out", {
+    properties: {...props}
+  });
 }
 
 export const view_product_details = (props?: any) => {
-  tracker.track("demo-view-product-details", props);
+  tracker.track("demo-view-product-details", {
+    properties: {...props}
+  });
 }
 
 export const view_cart = (props?: any) => {
-  tracker.track("cart_viewed", props);
+  tracker.track("cart_viewed", {
+    properties: {...props}
+  });
 }
 
 export const view_category = (props?: any) => {
-  tracker.track("view-category", props);
+  tracker.track("view-category", {
+    properties: {...props}
+  });
+}
+
+export const contact_form_submitted = (props?: any) => {
+  tracker.track("contact_form_submitted", {
+    properties: {...props}
+  });
+}
+
+export const LeadFormSubmitted = (props?: any) => {
+  tracker.track("LeadFormSubmitted", {
+    properties: {...props}
+  });
 }
