@@ -1,14 +1,23 @@
 import React from 'react';
 import {onLogin} from "services/UserService";
+import { useRouter } from 'next/router'
 
 const SignInContainer = () => {
+  const router = useRouter()
+
   const onAuthenticate = () => {
     const email: string = (document.getElementById("email") as HTMLInputElement).value;
     const password: string = (document.getElementById("password") as HTMLInputElement).value;
-    onLogin(email, password).then(user => {
+    onLogin(email, password).then(resp => {
+      if(resp.status !== 200) return;
+      let user = resp.data;
       localStorage.setItem('user', JSON.stringify(user));
+      localStorage.setItem('email', user.email);
+      localStorage.setItem('token', user.token);
+      router.push("/").then(() => router.reload())
     })
   }
+
   return (
     <React.Fragment>
       <div className="container-fluid px-0">
@@ -65,7 +74,7 @@ const SignInContainer = () => {
                 <div className="col-auto"><a className="fs--1 fw-semi-bold">Forgot Password?</a></div>
               </div>
               <button onClick={onAuthenticate} className="btn btn-primary w-100 mb-3">Sign In</button>
-              <div className="text-center"><a className="fs--1 fw-bold">Create an account</a></div>
+              <div className="text-center"><a className="fs--1 fw-bold" href={"/signup"}>Create an account</a></div>
             </div>
           </div>
         </div>

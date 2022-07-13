@@ -1,9 +1,17 @@
 [
-  {
-    "id": 1,
-    "email": "nguyenlephong1997@gmail.com",
-    "password": "iloveprimedata",
-    "firstName": "Big",
-    "lastName": "Boss"
-  }
+    {
+        "id": 1,
+        "email": "nguyenlephong1997@gmail.com",
+        "password": "iloveprimedata",
+        "full_name": "Nguyễn Lê Phong",
+        "firstName": "Big",
+        "lastName": "Boss"
+    },
+    {
+        "id": "nguyenlephong@gmail.com",
+        "email": "nguyenlephong@gmail.com",
+        "full_name": "Have video",
+        "password": "123",
+        "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJuZ3V5ZW5sZXBob25nQGdtYWlsLmNvbSIsImlhdCI6MTY1NzcwNzk0MywiZXhwIjoxNjU3Nzk0MzQzfQ.33N1JATEmk-KgneL1EM2U1Yo_Rjpus-czQEkiDsxeps"
+    }
 ]
