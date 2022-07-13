@@ -1,6 +1,7 @@
 import React from 'react';
 import {onLogin} from "services/UserService";
 import { useRouter } from 'next/router'
+import {showNotify} from "lib/notification";
 
 const SignInContainer = () => {
   const router = useRouter()
@@ -9,7 +10,10 @@ const SignInContainer = () => {
     const email: string = (document.getElementById("email") as HTMLInputElement).value;
     const password: string = (document.getElementById("password") as HTMLInputElement).value;
     onLogin(email, password).then(resp => {
-      if(resp.status !== 200) return;
+      if (resp.status !== 200) {
+        showNotify(resp.data?.message, null, "danger");
+        return;
+      }
       let user = resp.data;
       localStorage.setItem('user', JSON.stringify(user));
       localStorage.setItem('email', user.email);

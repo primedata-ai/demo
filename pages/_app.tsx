@@ -1,3 +1,5 @@
+import 'react-notifications-component/dist/theme.css'
+
 import "../styles/globals.css";
 import "../public/vendor/bootstrap/css/bootstrap.min.css";
 
@@ -31,6 +33,7 @@ import {appWithTranslation} from "next-i18next";
 import Nexti18nConfig from '../next-i18next.config'
 import {QueryClient, QueryClientProvider, Hydrate} from "react-query";
 import {ReactQueryDevtools} from "react-query/devtools";
+import { ReactNotifications } from 'react-notifications-component'
 
 function MyApp({Component, pageProps}: AppProps) {
   const [queryClient] = React.useState(() => new QueryClient());
@@ -38,6 +41,7 @@ function MyApp({Component, pageProps}: AppProps) {
     <React.Fragment>
       <QueryClientProvider client={queryClient}>
         <Hydrate state={pageProps.dehydratedState}>
+          <ReactNotifications/>
           <Component {...pageProps} />
           <Footer/>
           <ReactQueryDevtools initialIsOpen={false}/>

@@ -29,7 +29,7 @@ function handler(req: NextApiRequest, res: NextApiResponse<any>) {
       id: uuidv4(),
       email: email,
       full_name: name,
-      password: password
+      password: password,
     }
 
     // create a jwt token that is valid for 7 days
@@ -38,6 +38,7 @@ function handler(req: NextApiRequest, res: NextApiResponse<any>) {
     users.push(userRegister)
     saveDataToFile("/users.json", users)
     // return basic user details and token
+    userRegister.password = uuidv4();
     return res.status(200).json(userRegister);
   }
 }

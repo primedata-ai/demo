@@ -5,6 +5,7 @@ import Script from "next/script";
 import {NextPage} from "next";
 import RegisterContainer from "components/containers/RegisterContainer";
 
+
 const SignUp: NextPage = () => {
   return (
     <React.Fragment>

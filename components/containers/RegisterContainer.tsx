@@ -1,6 +1,7 @@
 import React, {FormEvent} from 'react';
 import {onSignup} from "services/UserService";
 import {useRouter} from 'next/router'
+import {showNotify} from "lib/notification";
 
 const RegisterContainer = () => {
   const router = useRouter()
@@ -16,10 +17,16 @@ const RegisterContainer = () => {
     const password: string = formProps.password?.toString();
     const confirm_password: string = formProps.confirm_password?.toString();
 
-    if(password !== confirm_password) return;
+    if(password !== confirm_password) {
+      showNotify("Bạn nhập mật khẩu chưa khớp kìa!", null, "danger");
+      return;
+    }
 
     onSignup(name, email, password).then(resp => {
-      if (resp.status !== 200) return;
+      if (resp.status !== 200) {
+        showNotify(resp.data?.message, null, "danger");
+        return;
+      }
       let user = resp.data;
       localStorage.setItem('user', JSON.stringify(user));
       localStorage.setItem('email', user.email);

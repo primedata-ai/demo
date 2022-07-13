@@ -1,6 +1,6 @@
 const jwt = require('jsonwebtoken');
 import getConfig from 'next/config';
-
+import {v4 as uuidv4} from 'uuid';
 import { apiHandler } from 'lib/api-handler';
 
 const { serverRuntimeConfig } = getConfig();
@@ -27,6 +27,7 @@ function handler(req, res) {
         // return basic user details and token
         return res.status(200).json({
             ...user,
+            password: uuidv4(),
             id: email,
             email: user.email,
             token

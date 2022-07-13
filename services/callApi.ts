@@ -24,7 +24,7 @@ export const callApi = (endpoint: string, method: string, body: any, cancelToken
      return res;
     })
     .catch((err) => {
-      return err;
+      return err.response;
     });
 }
 
