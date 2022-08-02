@@ -24,3 +24,13 @@ export const getCurrentUserAuth = () => {
 export const getTokenAuthCurrent = () => {
   return localStorage.getItem("X-Auth-Token");
 }
+
+export const isLoggedIn = (): boolean => {
+  return !!localStorage.getItem("token");
+}
+
+export const logOutCurrentUser = () => {
+  localStorage.removeItem("user");
+  localStorage.removeItem("token");
+  localStorage.removeItem("email");
+}

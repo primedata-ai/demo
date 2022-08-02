@@ -28,7 +28,9 @@
       "your_cart": "Giỏ hàng của bạn",
       "total": "Tổng cộng",
       "view_cart": "Xem giỏ hàng",
-      "checkout": "Thanh toán"
+      "checkout": "Thanh toán",
+      "login": "Đăng nhập",
+      "logout": "Đăng xuất"
     }
   }
 }

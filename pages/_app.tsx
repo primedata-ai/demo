@@ -35,8 +35,11 @@ import {QueryClient, QueryClientProvider, Hydrate} from "react-query";
 import {ReactQueryDevtools} from "react-query/devtools";
 import { ReactNotifications } from 'react-notifications-component'
 
-function MyApp({Component, pageProps}: AppProps) {
+function MyApp({Component, pageProps, ...appProps}: AppProps) {
   const [queryClient] = React.useState(() => new QueryClient());
+  if (['/logout'].includes(appProps.router.pathname))
+    return <Component {...pageProps} />
+
   return (
     <React.Fragment>
       <QueryClientProvider client={queryClient}>

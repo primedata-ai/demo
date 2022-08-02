@@ -77,7 +77,7 @@ const RegisterContainer = () => {
                     className="form-control form-icon-input" id={"password"} name={"password"} type="password" placeholder="Password"/></div>
                   <div className="col-md-6">
                     <label className="form-label" htmlFor="confirm_password">Confirm Password</label>
-                    <input className="form-control form-icon-input" id={"confirm_password"} name={"confirm_password"} type="confirm_password"
+                    <input className="form-control form-icon-input" id={"confirm_password"} name={"confirm_password"} type="password"
                                            placeholder="Confirm Password"/></div>
                 </div>
                 <div className="form-check mb-3">

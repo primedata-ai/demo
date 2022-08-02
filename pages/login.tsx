@@ -4,6 +4,16 @@ import CartHeader from "components/containers/CartHeader";
 import Script from "next/script";
 import {NextPage} from "next";
 import SignInContainer from 'components/containers/SignInContainer';
+import {serverSideTranslations} from "next-i18next/serverSideTranslations";
+
+export async function getStaticProps({ locale } : {locale: string}) {
+    return {
+        props: {
+            ...(await serverSideTranslations(locale, ['common'])),
+            // Will be passed to the page component as props
+        },
+    };
+}
 
 const Login: NextPage = () => {
   return (
@@ -116,10 +126,7 @@ const Login: NextPage = () => {
         }
       </Script>
 
-      <Script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAKFWBqlKAGCeS1rMVoaNlwyayu0e0YRes"
-              strategy="beforeInteractive"></Script>
-      <Script src="/js/map-custom.js" strategy="afterInteractive"></Script>
-      <Script async src="/js/main.js" strategy="afterInteractive"></Script>
+      {/*<Script async src="/js/main.js" strategy="afterInteractive"></Script>*/}
     </React.Fragment>
   );
 };

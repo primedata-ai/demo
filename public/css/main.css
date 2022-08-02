@@ -3327,7 +3327,7 @@ input.num-product::-webkit-inner-spin-button {
 
 }
 
-.lang-menu:hover .menu-hover {
+.lang-menu:hover .menu-hover, .my-account:hover .menu-hover {
   z-index: 2000;
   opacity: 1;
 }
@@ -3345,6 +3345,7 @@ input.num-product::-webkit-inner-spin-button {
   border-right: 1px solid rgba(255,255,255, .3);
   transition: opacity 1s;
   opacity: 0;
+  padding: 0;
 }
 
 .sub-menu-hover {

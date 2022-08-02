@@ -1,13 +1,16 @@
 import { useTranslation } from 'next-i18next';
 import {useRouter} from 'next/router';
-import React, {useState} from 'react';
+import React, {useEffect, useState} from 'react';
 import {IHeader, IMenuItem} from "../interface/IHeader";
+import Link from "next/link";
+import {isLoggedIn} from "services/UserService";
 
 const Header = (props: IHeader) => {
   const {menuActive} = props;
   const {t} = useTranslation();
   const router = useRouter();
   const {pathname, query, asPath, locale} = router;
+  const [isUser, setIsUser] = useState<boolean>(false);
   const [menu,] = useState<IMenuItem[]>([
     {
       id: "index",
@@ -59,6 +62,10 @@ const Header = (props: IHeader) => {
 
   ]);
 
+  useEffect(() => {
+    setIsUser(isLoggedIn());
+  }, [])
+
   const switchLanguage = (nextLocale: string): void => {
     router.push({pathname, query}, asPath, {locale: nextLocale})
   }
@@ -80,8 +87,25 @@ const Header = (props: IHeader) => {
               <a href="#" className="flex-c-m trans-04 p-lr-25">
                 {t("header.texts.help_faqs")}
               </a>
-              <a href="#" className="flex-c-m trans-04 p-lr-25">
-                {t("header.texts.my_account")}
+              <a href="#" className="flex-c-m trans-04 p-lr-25 my-account pos-relative">
+                {
+                  isUser ? (
+                      <React.Fragment>
+                        <span>{t("header.texts.my_account")}</span>
+                        <ul className="menu-hover">
+                          <li className="sub-menu-hover">
+                            <Link href={`/logout?redirect=${encodeURIComponent(window.location.href)}`}><span>{t("header.texts.logout")}</span></Link>
+                          </li>
+                        </ul>
+                      </React.Fragment>
+                  ) : (
+                      <React.Fragment>
+                        <Link href={"/login"}>
+                          <span>{t("header.texts.login")}</span>
+                        </Link>
+                      </React.Fragment>
+                  )
+                }
               </a>
               <a href="#" className="flex-c-m trans-04 p-lr-25 pos-relative lang-menu">
                 <span>{locale?.toUpperCase()}</span>
