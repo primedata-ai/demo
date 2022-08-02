@@ -12,18 +12,25 @@
     "deploy": "gh-pages -b gh-pages -d build"
   },
   "dependencies": {
+    "@next/bundle-analyzer": "^12.2.2",
+    "@types/uuid": "^8.3.4",
     "axios": "^0.27.2",
+    "express-jwt": "^7.7.5",
     "gh-pages": "^4.0.0",
     "jQuery": "^1.7.4",
-    "next": "12.1.6",
+    "jsonwebtoken": "^8.5.1",
+    "moment": "^2.29.4",
+    "next": "latest",
     "next-compose-plugins": "^2.2.1",
     "next-i18next": "^11.0.0",
     "next-remove-imports": "^1.0.6",
     "next-transpile-modules": "^9.0.0",
     "react": "18.1.0",
     "react-dom": "18.1.0",
+    "react-notifications-component": "^4.0.1",
     "react-query": "^3.39.1",
-    "styled-components": "^5.3.5"
+    "styled-components": "^5.3.5",
+    "uuid": "^8.3.2"
   },
   "devDependencies": {
     "@types/node": "17.0.31",

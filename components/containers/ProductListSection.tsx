@@ -1,31 +1,23 @@
-import React, {useEffect, useState} from 'react';
+import React from 'react';
 import {IProductListSection} from "../interface/IProductListSection";
 import {IProduct} from "../interface/IProduct";
 import {useQuery} from "react-query";
 import {getProducts} from "services/ProductService";
+import {PLoading} from "components/elements/PLoading";
+import {formatNumber} from "services/utils/FormatUtils";
 
 const ProductListSection = (props: IProductListSection) => {
   const {hasTitle, isProductPage} = props;
-  const [products, setProducts] = useState<IProduct[]>([]);
-  const {isSuccess, data: prods, isLoading, isError} = useQuery(
-    ["getProducts"],
-    getProducts,
-  );
-  console.log('log::15 ProductListSection', isSuccess, isLoading, isError, prods)
-  useEffect(() => {
-    let listOfProd: IProduct[] = []
-    for (let i = 1; i < 17; i++) {
-      listOfProd.push({
-        id: `${i}`,
-        slug: `prod-slug-${i}`,
-        image: i < 10 ? `/images/product-0${i}.jpg` : `/images/product-${i}.jpg`,
-        name: "Esprit Ruffle Shirt" || "",
-        price: 30000000,
-        category: "women" || "men" || "shoes" || "watches"
-      })
-    }
-    setProducts(listOfProd)
-  }, [])
+  const {data: products, isLoading} = useQuery(["getProducts"], getProducts);
+
+  if (isLoading) return <PLoading/>
+
+  const getImageUrl = (i: number) => {
+    if (i === 0) return "/images/product-01.jpg"
+    if (i < 10) return `/images/product-0${i}.jpg`
+    if (i < 17) return `/images/product-${i}.jpg`
+    return "/images/product-12.jpg"
+  }
 
   return (
     <section className={`bg0 ${isProductPage ? 'm-t-23' : 'p-t-23 '}  p-b-140`}>
@@ -236,12 +228,14 @@ const ProductListSection = (props: IProductListSection) => {
         </div>
         <div className="row isotope-grid">
           {
-            products.map((prod: IProduct) => {
+            products && products.data.map((prod: IProduct, i: number) => {
+              let image = getImageUrl(i)
+
               return (
                 <div key={prod.id} className={`col-sm-6 col-md-4 col-lg-3 p-b-35 isotope-item women`}>
                   <div className="block2">
                     <div className="block2-pic hov-img0">
-                      <img src={`${prod.image}`} alt={"Hình ảnh của sản phẩm tên: " + prod.name}/>
+                      <img src={image} alt={"Hình ảnh của sản phẩm tên: " + prod.name}/>
                       <a href="#"
                          className="block2-btn flex-c-m stext-103 cl2 size-102 bg0 bor2 hov-btn1 p-lr-15 trans-04 js-show-modal1">
                         Quick View
@@ -253,7 +247,7 @@ const ProductListSection = (props: IProductListSection) => {
                           {prod.name}
                         </a>
                         <span className="stext-105 cl3">
-                      {prod.price}
+                      {formatNumber(prod.price)} VND
                     </span>
                       </div>
                       <div className="block2-txt-child2 flex-r p-t-3">

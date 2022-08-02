@@ -1,10 +1,18 @@
 import React, {useEffect} from 'react';
-import {view_cart} from "../../lib/track";
+import {view_cart} from "lib/track";
+import {useQuery} from "react-query";
+import {getCartById} from "services/CartService";
+import {PLoading} from "components/elements/PLoading";
 
-const CartContainer = (props:any) => {
+const CartContainer = (props: any) => {
+  const {data: cart, isLoading} = useQuery(["getCartById"], () => getCartById("cartId"));
+
   useEffect(() => {
-    view_cart();
-  }, [])
+    cart && view_cart(cart.data);
+  }, [cart])
+
+  if(isLoading) return <PLoading/>
+
   return (
     <form className="bg0 p-t-75 p-b-85">
       <div className="container">
@@ -111,6 +119,7 @@ const CartContainer = (props:any) => {
                     <div className="rs1-select2 rs2-select2 bor8 bg0 m-b-12 m-t-9">
                       <select className="js-select2" name="time">
                         <option>Select a country...</option>
+                        <option>Việt Nam</option>
                         <option>USA</option>
                         <option>UK</option>
                       </select>

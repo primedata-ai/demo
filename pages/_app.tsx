@@ -1,3 +1,5 @@
+import 'react-notifications-component/dist/theme.css'
+
 import "../styles/globals.css";
 import "../public/vendor/bootstrap/css/bootstrap.min.css";
 
@@ -18,6 +20,11 @@ import "../public/vendor/perfect-scrollbar/perfect-scrollbar.css";
 import "../public/css/util.css";
 import "../public/css/main.css";
 
+import "../public/css/phoenix.min.css";
+import "../public/css/user.min.css";
+
+import "../styles/p-loading.style.css";
+
 import type {AppProps} from "next/app";
 
 import React from "react";
@@ -26,13 +33,18 @@ import {appWithTranslation} from "next-i18next";
 import Nexti18nConfig from '../next-i18next.config'
 import {QueryClient, QueryClientProvider, Hydrate} from "react-query";
 import {ReactQueryDevtools} from "react-query/devtools";
+import { ReactNotifications } from 'react-notifications-component'
 
-function MyApp({Component, pageProps}: AppProps) {
+function MyApp({Component, pageProps, ...appProps}: AppProps) {
   const [queryClient] = React.useState(() => new QueryClient());
+  if (['/logout'].includes(appProps.router.pathname))
+    return <Component {...pageProps} />
+
   return (
     <React.Fragment>
       <QueryClientProvider client={queryClient}>
         <Hydrate state={pageProps.dehydratedState}>
+          <ReactNotifications/>
           <Component {...pageProps} />
           <Footer/>
           <ReactQueryDevtools initialIsOpen={false}/>
